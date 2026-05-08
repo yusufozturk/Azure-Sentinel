@@ -6,7 +6,7 @@
     "config": {
       "isWizard": false,
       "basics": {
-        "description": "<img src=\"https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Logos/VirtualMetric.svg\" width=\"75px\" height=\"75px\">\n\n**Note:** Please refer to the following before installing the solution: \n\n• Review the solution [Release Notes](https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/VirtualMetric%20DataStream/ReleaseNotes.md)\n\n • There may be [known issues](https://aka.ms/sentinelsolutionsknownissues) pertaining to this Solution, please refer to them before installing.\n\nVirtualMetric DataStream solution provides comprehensive data collection capabilities for Microsoft Sentinel and Microsoft Sentinel data lake, supporting ASIM normalized tables and standard security tables with both native and custom table options.\n\n**Data Connectors:** 3\n\n[Learn more about Microsoft Sentinel](https://aka.ms/azuresentinel) | [Learn more about Solutions](https://aka.ms/azuresentinelsolutionsdoc)",
+        "description": "<img src=\"https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Logos/VirtualMetric.svg\" width=\"75px\" height=\"75px\">\n\n**Note:** Please refer to the following before installing the solution: \n\n• Review the solution [Release Notes](https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/VirtualMetric%20DataStream/ReleaseNotes.md)\n\n • There may be [known issues](https://aka.ms/sentinelsolutionsknownissues) pertaining to this Solution, please refer to them before installing.\n\nVirtualMetric DataStream solution provides comprehensive data collection capabilities for Microsoft Sentinel and Microsoft Sentinel data lake, supporting ASIM normalized tables and standard security tables with both native and custom table options.\n\n**Data Connectors:** 3, **Analytic Rules:** 18\n\n[Learn more about Microsoft Sentinel](https://aka.ms/azuresentinel) | [Learn more about Solutions](https://aka.ms/azuresentinelsolutionsdoc)",
         "subscription": {
           "resourceProviders": [
             "Microsoft.OperationsManagement/solutions",
@@ -86,6 +86,286 @@
                 "uri": "https://docs.microsoft.com/azure/sentinel/connect-data-sources"
               }
             }
+          }
+        ]
+      },
+      {
+        "name": "analytics",
+        "label": "Analytics",
+        "subLabel": {
+          "preValidation": "Configure the analytics",
+          "postValidation": "Done"
+        },
+        "bladeTitle": "Analytics",
+        "elements": [
+          {
+            "name": "analytics-text",
+            "type": "Microsoft.Common.TextBlock",
+            "options": {
+              "text": "This solution installs the following analytic rule templates. After installing the solution, create and enable analytic rules in Manage solution view."
+            }
+          },
+          {
+            "name": "analytics-link",
+            "type": "Microsoft.Common.TextBlock",
+            "options": {
+              "link": {
+                "label": "Learn more",
+                "uri": "https://docs.microsoft.com/azure/sentinel/tutorial-detect-threats-custom?WT.mc_id=Portal-Microsoft_Azure_CreateUIDef"
+              }
+            }
+          },
+          {
+            "name": "analytic1",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - ASIM Audit schema drift",
+            "elements": [
+              {
+                "name": "analytic1-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of ASimAuditEventLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic2",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - ASIM Authentication schema drift",
+            "elements": [
+              {
+                "name": "analytic2-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of ASimAuthenticationEventLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic3",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - ASIM DHCP schema drift",
+            "elements": [
+              {
+                "name": "analytic3-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of ASimDhcpEventLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic4",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - ASIM DNS schema drift",
+            "elements": [
+              {
+                "name": "analytic4-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of ASimDnsActivityLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic5",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - ASIM File schema drift",
+            "elements": [
+              {
+                "name": "analytic5-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of ASimFileEventLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic6",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - ASIM NetworkSession schema drift",
+            "elements": [
+              {
+                "name": "analytic6-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of ASimNetworkSessionLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic7",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - ASIM Process schema drift",
+            "elements": [
+              {
+                "name": "analytic7-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of ASimProcessEventLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic8",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - ASIM Registry schema drift",
+            "elements": [
+              {
+                "name": "analytic8-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of ASimRegistryEventLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic9",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - ASIM UserManagement schema drift",
+            "elements": [
+              {
+                "name": "analytic9-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of ASimUserManagementActivityLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic10",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - ASIM WebSession schema drift",
+            "elements": [
+              {
+                "name": "analytic10-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of ASimWebSessionLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic11",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - CommonSecurityLog schema drift",
+            "elements": [
+              {
+                "name": "analytic11-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of CommonSecurityLog records pushed by the VirtualMetric DataStream connector are missing one or more CEF-mandatory fields (DeviceVendor, DeviceProduct, DeviceEventClassID, Activity). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic12",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - Event schema drift",
+            "elements": [
+              {
+                "name": "analytic12-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of Event records pushed by the VirtualMetric DataStream connector are missing one or more required fields (EventLog, Computer, EventID, Source). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic13",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - SecurityEvent schema drift",
+            "elements": [
+              {
+                "name": "analytic13-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of SecurityEvent records pushed by the VirtualMetric DataStream connector are missing one or more required fields (EventID, Computer, Channel, Activity). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic14",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - Syslog schema drift",
+            "elements": [
+              {
+                "name": "analytic14-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of Syslog records pushed by the VirtualMetric DataStream connector are missing one or more required fields (Computer, Facility, SyslogMessage, ProcessName). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic15",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - WindowsEvent schema drift",
+            "elements": [
+              {
+                "name": "analytic15-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when more than 5% of WindowsEvent records pushed by the VirtualMetric DataStream connector are missing one or more required fields (EventID, Computer, Channel, Provider). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic16",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - Ingestion stopped",
+            "elements": [
+              {
+                "name": "analytic16-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects streams pushed by the VirtualMetric DataStream connector that were active in the past 7 days but have received no events in the last hour. A historical floor of 100 events is applied to avoid alerting on streams that were never actually used. This usually indicates a DataStream agent outage, a credential expiry, or a network issue between the agent and the Data Collection Endpoint."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic17",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - Volume spike",
+            "elements": [
+              {
+                "name": "analytic17-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when a stream pushed by the VirtualMetric DataStream connector ingests more than 5x its 7-day hourly baseline in the last hour. A floor of 1000 events is applied to the recent window to avoid alerting on tiny streams whose ratios are inherently unstable. This catches misconfigured agents flooding the workspace, runaway debug logging, or an upstream system in an error loop - any of which can drive unexpected ingestion costs."
+                }
+              }
+            ]
+          },
+          {
+            "name": "analytic18",
+            "type": "Microsoft.Common.Section",
+            "label": "VirtualMetric DataStream - Ingestion latency",
+            "elements": [
+              {
+                "name": "analytic18-text",
+                "type": "Microsoft.Common.TextBlock",
+                "options": {
+                  "text": "Detects when the P95 gap between an event's TimeGenerated and its ingestion_time() exceeds 30 minutes for a stream pushed by the VirtualMetric DataStream connector. A floor of 100 sample events per hour is applied. Persistent latency means the DataStream agent is buffering, throttled, or facing backpressure, and detections built on these tables will run against stale data."
+                }
+              }
+            ]
           }
         ]
       }

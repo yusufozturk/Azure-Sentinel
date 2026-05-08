@@ -28,7 +28,7 @@
     "Analytic Rules/VMDataStreamIngestionLatency.yaml"
   ],
   "BasePath": "C:\\Repos\\github.com\\yusufozturk\\Azure-Sentinel\\Solutions\\VirtualMetric DataStream CCF",
-  "Version": "3.0.1",
+  "Version": "3.1.0",
   "DataConnectorCCFVersion": "3.0.0",
   "Metadata": "SolutionMetadata.json",
   "TemplateSpec": true,

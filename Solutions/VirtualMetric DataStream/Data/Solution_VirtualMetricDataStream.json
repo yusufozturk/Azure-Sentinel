@@ -1,16 +1,36 @@
 {
-    "Name": "VirtualMetric DataStream",
-    "Author": "VirtualMetric",
-    "Logo": "<img src=\"https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Logos/VirtualMetric.svg\" width=\"75px\" height=\"75px\">",
-    "Description": "VirtualMetric DataStream solution provides comprehensive data collection capabilities for Microsoft Sentinel and Microsoft Sentinel data lake, supporting ASIM normalized tables and standard security tables with both native and custom table options.",
-    "Data Connectors": [
-        "Data Connectors/VirtualMetric-Sentinel/Template_Sentinel.json",
-        "Data Connectors/VirtualMetric-SentinelDataLake/Template_SentinelDataLake.json",
-        "Data Connectors/VirtualMetric-DirectorProxy/Template_DirectorProxy.json"
-    ],
-    "BasePath": "C:\\GitHub\\Azure-Sentinel\\Solutions\\VirtualMetric DataStream",
-    "Version": "3.0.0",
-    "Metadata": "SolutionMetadata.json",
-    "TemplateSpec": true,
-    "Is1PConnector": false
+  "Name": "VirtualMetric DataStream",
+  "Author": "VirtualMetric",
+  "Logo": "<img src=\"https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Logos/VirtualMetric.svg\" width=\"75px\" height=\"75px\">",
+  "Description": "VirtualMetric DataStream solution provides comprehensive data collection capabilities for Microsoft Sentinel and Microsoft Sentinel data lake, supporting ASIM normalized tables and standard security tables with both native and custom table options.",
+  "Data Connectors": [
+    "Data Connectors/VirtualMetric-Sentinel/Template_Sentinel.json",
+    "Data Connectors/VirtualMetric-SentinelDataLake/Template_SentinelDataLake.json",
+    "Data Connectors/VirtualMetric-DirectorProxy/Template_DirectorProxy.json"
+  ],
+  "Analytic Rules": [
+    "Analytic Rules/VMDataStreamASIMAuditSchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamASIMAuthenticationSchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamASIMDhcpSchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamASIMDnsSchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamASIMFileSchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamASIMNetworkSessionSchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamASIMProcessSchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamASIMRegistrySchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamASIMUserManagementSchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamASIMWebSessionSchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamCommonSecurityLogSchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamEventSchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamSecurityEventSchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamSyslogSchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamWindowsEventSchemaDrift.yaml",
+    "Analytic Rules/VMDataStreamIngestionStopped.yaml",
+    "Analytic Rules/VMDataStreamVolumeSpike.yaml",
+    "Analytic Rules/VMDataStreamIngestionLatency.yaml"
+  ],
+  "BasePath": "C:\\GitHub\\Azure-Sentinel\\Solutions\\VirtualMetric DataStream",
+  "Version": "3.1.0",
+  "Metadata": "SolutionMetadata.json",
+  "TemplateSpec": true,
+  "Is1PConnector": false
 }

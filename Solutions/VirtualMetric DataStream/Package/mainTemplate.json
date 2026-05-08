@@ -31,7 +31,7 @@
   },
   "variables": {
     "_solutionName": "VirtualMetric DataStream",
-    "_solutionVersion": "3.0.0",
+    "_solutionVersion": "3.1.0",
     "solutionId": "virtualmetric.azure-sentinel-solution-virtualmetric-datastream",
     "_solutionId": "[variables('solutionId')]",
     "uiConfigId1": "VirtualMetricMSSentinelConnector",
@@ -61,6 +61,132 @@
     "dataConnectorTemplateSpecName3": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-dc-',uniquestring(variables('_dataConnectorContentId3'))))]",
     "dataConnectorVersion3": "1.0.0",
     "_dataConnectorcontentProductId3": "[concat(take(variables('_solutionId'),50),'-','dc','-', uniqueString(concat(variables('_solutionId'),'-','DataConnector','-',variables('_dataConnectorContentId3'),'-', variables('dataConnectorVersion3'))))]",
+    "analyticRuleObject1": {
+      "analyticRuleVersion1": "1.0.0",
+      "_analyticRulecontentId1": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0002",
+      "analyticRuleId1": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0002')]",
+      "analyticRuleTemplateSpecName1": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0002')))]",
+      "_analyticRulecontentProductId1": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0002','-', '1.0.0')))]"
+    },
+    "analyticRuleObject2": {
+      "analyticRuleVersion2": "1.0.0",
+      "_analyticRulecontentId2": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0001",
+      "analyticRuleId2": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0001')]",
+      "analyticRuleTemplateSpecName2": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0001')))]",
+      "_analyticRulecontentProductId2": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0001','-', '1.0.0')))]"
+    },
+    "analyticRuleObject3": {
+      "analyticRuleVersion3": "1.0.0",
+      "_analyticRulecontentId3": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0003",
+      "analyticRuleId3": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0003')]",
+      "analyticRuleTemplateSpecName3": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0003')))]",
+      "_analyticRulecontentProductId3": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0003','-', '1.0.0')))]"
+    },
+    "analyticRuleObject4": {
+      "analyticRuleVersion4": "1.0.0",
+      "_analyticRulecontentId4": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0004",
+      "analyticRuleId4": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0004')]",
+      "analyticRuleTemplateSpecName4": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0004')))]",
+      "_analyticRulecontentProductId4": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0004','-', '1.0.0')))]"
+    },
+    "analyticRuleObject5": {
+      "analyticRuleVersion5": "1.0.0",
+      "_analyticRulecontentId5": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0005",
+      "analyticRuleId5": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0005')]",
+      "analyticRuleTemplateSpecName5": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0005')))]",
+      "_analyticRulecontentProductId5": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0005','-', '1.0.0')))]"
+    },
+    "analyticRuleObject6": {
+      "analyticRuleVersion6": "1.0.0",
+      "_analyticRulecontentId6": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0006",
+      "analyticRuleId6": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0006')]",
+      "analyticRuleTemplateSpecName6": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0006')))]",
+      "_analyticRulecontentProductId6": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0006','-', '1.0.0')))]"
+    },
+    "analyticRuleObject7": {
+      "analyticRuleVersion7": "1.0.0",
+      "_analyticRulecontentId7": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0007",
+      "analyticRuleId7": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0007')]",
+      "analyticRuleTemplateSpecName7": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0007')))]",
+      "_analyticRulecontentProductId7": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0007','-', '1.0.0')))]"
+    },
+    "analyticRuleObject8": {
+      "analyticRuleVersion8": "1.0.0",
+      "_analyticRulecontentId8": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0008",
+      "analyticRuleId8": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0008')]",
+      "analyticRuleTemplateSpecName8": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0008')))]",
+      "_analyticRulecontentProductId8": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0008','-', '1.0.0')))]"
+    },
+    "analyticRuleObject9": {
+      "analyticRuleVersion9": "1.0.0",
+      "_analyticRulecontentId9": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0009",
+      "analyticRuleId9": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0009')]",
+      "analyticRuleTemplateSpecName9": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0009')))]",
+      "_analyticRulecontentProductId9": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0009','-', '1.0.0')))]"
+    },
+    "analyticRuleObject10": {
+      "analyticRuleVersion10": "1.0.0",
+      "_analyticRulecontentId10": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000a",
+      "analyticRuleId10": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000a')]",
+      "analyticRuleTemplateSpecName10": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000a')))]",
+      "_analyticRulecontentProductId10": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000a','-', '1.0.0')))]"
+    },
+    "analyticRuleObject11": {
+      "analyticRuleVersion11": "1.0.0",
+      "_analyticRulecontentId11": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000b",
+      "analyticRuleId11": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000b')]",
+      "analyticRuleTemplateSpecName11": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000b')))]",
+      "_analyticRulecontentProductId11": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000b','-', '1.0.0')))]"
+    },
+    "analyticRuleObject12": {
+      "analyticRuleVersion12": "1.0.0",
+      "_analyticRulecontentId12": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000c",
+      "analyticRuleId12": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000c')]",
+      "analyticRuleTemplateSpecName12": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000c')))]",
+      "_analyticRulecontentProductId12": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000c','-', '1.0.0')))]"
+    },
+    "analyticRuleObject13": {
+      "analyticRuleVersion13": "1.0.0",
+      "_analyticRulecontentId13": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000d",
+      "analyticRuleId13": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000d')]",
+      "analyticRuleTemplateSpecName13": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000d')))]",
+      "_analyticRulecontentProductId13": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000d','-', '1.0.0')))]"
+    },
+    "analyticRuleObject14": {
+      "analyticRuleVersion14": "1.0.0",
+      "_analyticRulecontentId14": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000e",
+      "analyticRuleId14": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000e')]",
+      "analyticRuleTemplateSpecName14": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000e')))]",
+      "_analyticRulecontentProductId14": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000e','-', '1.0.0')))]"
+    },
+    "analyticRuleObject15": {
+      "analyticRuleVersion15": "1.0.0",
+      "_analyticRulecontentId15": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000f",
+      "analyticRuleId15": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000f')]",
+      "analyticRuleTemplateSpecName15": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000f')))]",
+      "_analyticRulecontentProductId15": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000f','-', '1.0.0')))]"
+    },
+    "analyticRuleObject16": {
+      "analyticRuleVersion16": "1.0.0",
+      "_analyticRulecontentId16": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0010",
+      "analyticRuleId16": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0010')]",
+      "analyticRuleTemplateSpecName16": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0010')))]",
+      "_analyticRulecontentProductId16": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0010','-', '1.0.0')))]"
+    },
+    "analyticRuleObject17": {
+      "analyticRuleVersion17": "1.0.0",
+      "_analyticRulecontentId17": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0011",
+      "analyticRuleId17": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0011')]",
+      "analyticRuleTemplateSpecName17": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0011')))]",
+      "_analyticRulecontentProductId17": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0011','-', '1.0.0')))]"
+    },
+    "analyticRuleObject18": {
+      "analyticRuleVersion18": "1.0.0",
+      "_analyticRulecontentId18": "7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0012",
+      "analyticRuleId18": "[resourceId('Microsoft.SecurityInsights/AlertRuleTemplates', '7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0012')]",
+      "analyticRuleTemplateSpecName18": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat(parameters('workspace'),'-ar-',uniquestring('7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0012')))]",
+      "_analyticRulecontentProductId18": "[concat(take(variables('_solutionId'),50),'-','ar','-', uniqueString(concat(variables('_solutionId'),'-','AnalyticsRule','-','7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0012','-', '1.0.0')))]"
+    },
     "_solutioncontentProductId": "[concat(take(variables('_solutionId'),50),'-','sl','-', uniqueString(concat(variables('_solutionId'),'-','Solution','-',variables('_solutionId'),'-', variables('_solutionVersion'))))]"
   },
   "resources": [
@@ -73,7 +199,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VirtualMetric DataStream data connector with template version 3.0.0",
+        "description": "VirtualMetric DataStream data connector with template version 3.1.0",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('dataConnectorVersion1')]",
@@ -377,7 +503,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VirtualMetric DataStream data connector with template version 3.0.0",
+        "description": "VirtualMetric DataStream data connector with template version 3.1.0",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('dataConnectorVersion2')]",
@@ -681,7 +807,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VirtualMetric DataStream data connector with template version 3.0.0",
+        "description": "VirtualMetric DataStream data connector with template version 3.1.0",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('dataConnectorVersion3')]",
@@ -985,16 +1111,1729 @@
       }
     },
     {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject1').analyticRuleTemplateSpecName1]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamASIMAuditSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject1').analyticRuleVersion1]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject1')._analyticRulecontentId1]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of ASimAuditEventLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - ASIM Audit schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nASimAuditEventLogs\n| where TimeGenerated > ago(1h)\n| extend Missing_EventType = isempty(EventType)\n| extend Missing_EventResult = isempty(EventResult)\n| extend Missing_EventVendor = isempty(EventVendor)\n| extend Missing_EventProduct = isempty(EventProduct)\n| extend Missing_EventStartTime = isnull(EventStartTime)\n| extend Missing_EventEndTime = isnull(EventEndTime)\n| extend HasMissingField = Missing_EventType or Missing_EventResult or Missing_EventVendor or Missing_EventProduct or Missing_EventStartTime or Missing_EventEndTime\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingEventType = countif(Missing_EventType),\n    MissingEventResult = countif(Missing_EventResult),\n    MissingEventVendor = countif(Missing_EventVendor),\n    MissingEventProduct = countif(Missing_EventProduct),\n    MissingEventStartTime = countif(Missing_EventStartTime),\n    MissingEventEndTime = countif(Missing_EventEndTime)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"ASimAuditEventLogs\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingEventType, MissingEventResult, MissingEventVendor, MissingEventProduct, MissingEventStartTime, MissingEventEndTime\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "ASimAuditEventLogs"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject1').analyticRuleId1,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 1",
+                "parentId": "[variables('analyticRuleObject1').analyticRuleId1]",
+                "contentId": "[variables('analyticRuleObject1')._analyticRulecontentId1]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject1').analyticRuleVersion1]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject1')._analyticRulecontentId1]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - ASIM Audit schema drift",
+        "contentProductId": "[variables('analyticRuleObject1')._analyticRulecontentProductId1]",
+        "id": "[variables('analyticRuleObject1')._analyticRulecontentProductId1]",
+        "version": "[variables('analyticRuleObject1').analyticRuleVersion1]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject2').analyticRuleTemplateSpecName2]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamASIMAuthenticationSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject2').analyticRuleVersion2]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject2')._analyticRulecontentId2]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of ASimAuthenticationEventLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - ASIM Authentication schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nASimAuthenticationEventLogs\n| where TimeGenerated > ago(1h)\n| extend Missing_EventType = isempty(EventType)\n| extend Missing_EventResult = isempty(EventResult)\n| extend Missing_EventVendor = isempty(EventVendor)\n| extend Missing_EventProduct = isempty(EventProduct)\n| extend Missing_EventStartTime = isnull(EventStartTime)\n| extend Missing_EventEndTime = isnull(EventEndTime)\n| extend HasMissingField = Missing_EventType or Missing_EventResult or Missing_EventVendor or Missing_EventProduct or Missing_EventStartTime or Missing_EventEndTime\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingEventType = countif(Missing_EventType),\n    MissingEventResult = countif(Missing_EventResult),\n    MissingEventVendor = countif(Missing_EventVendor),\n    MissingEventProduct = countif(Missing_EventProduct),\n    MissingEventStartTime = countif(Missing_EventStartTime),\n    MissingEventEndTime = countif(Missing_EventEndTime)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"ASimAuthenticationEventLogs\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingEventType, MissingEventResult, MissingEventVendor, MissingEventProduct, MissingEventStartTime, MissingEventEndTime\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "ASimAuthenticationEventLogs"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject2').analyticRuleId2,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 2",
+                "parentId": "[variables('analyticRuleObject2').analyticRuleId2]",
+                "contentId": "[variables('analyticRuleObject2')._analyticRulecontentId2]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject2').analyticRuleVersion2]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject2')._analyticRulecontentId2]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - ASIM Authentication schema drift",
+        "contentProductId": "[variables('analyticRuleObject2')._analyticRulecontentProductId2]",
+        "id": "[variables('analyticRuleObject2')._analyticRulecontentProductId2]",
+        "version": "[variables('analyticRuleObject2').analyticRuleVersion2]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject3').analyticRuleTemplateSpecName3]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamASIMDhcpSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject3').analyticRuleVersion3]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject3')._analyticRulecontentId3]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of ASimDhcpEventLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - ASIM DHCP schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nASimDhcpEventLogs\n| where TimeGenerated > ago(1h)\n| extend Missing_EventType = isempty(EventType)\n| extend Missing_EventResult = isempty(EventResult)\n| extend Missing_EventVendor = isempty(EventVendor)\n| extend Missing_EventProduct = isempty(EventProduct)\n| extend Missing_EventStartTime = isnull(EventStartTime)\n| extend Missing_EventEndTime = isnull(EventEndTime)\n| extend HasMissingField = Missing_EventType or Missing_EventResult or Missing_EventVendor or Missing_EventProduct or Missing_EventStartTime or Missing_EventEndTime\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingEventType = countif(Missing_EventType),\n    MissingEventResult = countif(Missing_EventResult),\n    MissingEventVendor = countif(Missing_EventVendor),\n    MissingEventProduct = countif(Missing_EventProduct),\n    MissingEventStartTime = countif(Missing_EventStartTime),\n    MissingEventEndTime = countif(Missing_EventEndTime)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"ASimDhcpEventLogs\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingEventType, MissingEventResult, MissingEventVendor, MissingEventProduct, MissingEventStartTime, MissingEventEndTime\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "ASimDhcpEventLogs"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject3').analyticRuleId3,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 3",
+                "parentId": "[variables('analyticRuleObject3').analyticRuleId3]",
+                "contentId": "[variables('analyticRuleObject3')._analyticRulecontentId3]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject3').analyticRuleVersion3]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject3')._analyticRulecontentId3]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - ASIM DHCP schema drift",
+        "contentProductId": "[variables('analyticRuleObject3')._analyticRulecontentProductId3]",
+        "id": "[variables('analyticRuleObject3')._analyticRulecontentProductId3]",
+        "version": "[variables('analyticRuleObject3').analyticRuleVersion3]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject4').analyticRuleTemplateSpecName4]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamASIMDnsSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject4').analyticRuleVersion4]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject4')._analyticRulecontentId4]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of ASimDnsActivityLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - ASIM DNS schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nASimDnsActivityLogs\n| where TimeGenerated > ago(1h)\n| extend Missing_EventType = isempty(EventType)\n| extend Missing_EventResult = isempty(EventResult)\n| extend Missing_EventVendor = isempty(EventVendor)\n| extend Missing_EventProduct = isempty(EventProduct)\n| extend Missing_EventStartTime = isnull(EventStartTime)\n| extend Missing_EventEndTime = isnull(EventEndTime)\n| extend HasMissingField = Missing_EventType or Missing_EventResult or Missing_EventVendor or Missing_EventProduct or Missing_EventStartTime or Missing_EventEndTime\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingEventType = countif(Missing_EventType),\n    MissingEventResult = countif(Missing_EventResult),\n    MissingEventVendor = countif(Missing_EventVendor),\n    MissingEventProduct = countif(Missing_EventProduct),\n    MissingEventStartTime = countif(Missing_EventStartTime),\n    MissingEventEndTime = countif(Missing_EventEndTime)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"ASimDnsActivityLogs\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingEventType, MissingEventResult, MissingEventVendor, MissingEventProduct, MissingEventStartTime, MissingEventEndTime\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "ASimDnsActivityLogs"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject4').analyticRuleId4,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 4",
+                "parentId": "[variables('analyticRuleObject4').analyticRuleId4]",
+                "contentId": "[variables('analyticRuleObject4')._analyticRulecontentId4]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject4').analyticRuleVersion4]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject4')._analyticRulecontentId4]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - ASIM DNS schema drift",
+        "contentProductId": "[variables('analyticRuleObject4')._analyticRulecontentProductId4]",
+        "id": "[variables('analyticRuleObject4')._analyticRulecontentProductId4]",
+        "version": "[variables('analyticRuleObject4').analyticRuleVersion4]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject5').analyticRuleTemplateSpecName5]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamASIMFileSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject5').analyticRuleVersion5]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject5')._analyticRulecontentId5]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of ASimFileEventLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - ASIM File schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nASimFileEventLogs\n| where TimeGenerated > ago(1h)\n| extend Missing_EventType = isempty(EventType)\n| extend Missing_EventResult = isempty(EventResult)\n| extend Missing_EventVendor = isempty(EventVendor)\n| extend Missing_EventProduct = isempty(EventProduct)\n| extend Missing_EventStartTime = isnull(EventStartTime)\n| extend Missing_EventEndTime = isnull(EventEndTime)\n| extend HasMissingField = Missing_EventType or Missing_EventResult or Missing_EventVendor or Missing_EventProduct or Missing_EventStartTime or Missing_EventEndTime\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingEventType = countif(Missing_EventType),\n    MissingEventResult = countif(Missing_EventResult),\n    MissingEventVendor = countif(Missing_EventVendor),\n    MissingEventProduct = countif(Missing_EventProduct),\n    MissingEventStartTime = countif(Missing_EventStartTime),\n    MissingEventEndTime = countif(Missing_EventEndTime)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"ASimFileEventLogs\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingEventType, MissingEventResult, MissingEventVendor, MissingEventProduct, MissingEventStartTime, MissingEventEndTime\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "ASimFileEventLogs"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject5').analyticRuleId5,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 5",
+                "parentId": "[variables('analyticRuleObject5').analyticRuleId5]",
+                "contentId": "[variables('analyticRuleObject5')._analyticRulecontentId5]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject5').analyticRuleVersion5]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject5')._analyticRulecontentId5]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - ASIM File schema drift",
+        "contentProductId": "[variables('analyticRuleObject5')._analyticRulecontentProductId5]",
+        "id": "[variables('analyticRuleObject5')._analyticRulecontentProductId5]",
+        "version": "[variables('analyticRuleObject5').analyticRuleVersion5]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject6').analyticRuleTemplateSpecName6]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamASIMNetworkSessionSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject6').analyticRuleVersion6]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject6')._analyticRulecontentId6]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of ASimNetworkSessionLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - ASIM NetworkSession schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nASimNetworkSessionLogs\n| where TimeGenerated > ago(1h)\n| extend Missing_EventType = isempty(EventType)\n| extend Missing_EventResult = isempty(EventResult)\n| extend Missing_EventVendor = isempty(EventVendor)\n| extend Missing_EventProduct = isempty(EventProduct)\n| extend Missing_EventStartTime = isnull(EventStartTime)\n| extend Missing_EventEndTime = isnull(EventEndTime)\n| extend HasMissingField = Missing_EventType or Missing_EventResult or Missing_EventVendor or Missing_EventProduct or Missing_EventStartTime or Missing_EventEndTime\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingEventType = countif(Missing_EventType),\n    MissingEventResult = countif(Missing_EventResult),\n    MissingEventVendor = countif(Missing_EventVendor),\n    MissingEventProduct = countif(Missing_EventProduct),\n    MissingEventStartTime = countif(Missing_EventStartTime),\n    MissingEventEndTime = countif(Missing_EventEndTime)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"ASimNetworkSessionLogs\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingEventType, MissingEventResult, MissingEventVendor, MissingEventProduct, MissingEventStartTime, MissingEventEndTime\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "ASimNetworkSessionLogs"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject6').analyticRuleId6,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 6",
+                "parentId": "[variables('analyticRuleObject6').analyticRuleId6]",
+                "contentId": "[variables('analyticRuleObject6')._analyticRulecontentId6]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject6').analyticRuleVersion6]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject6')._analyticRulecontentId6]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - ASIM NetworkSession schema drift",
+        "contentProductId": "[variables('analyticRuleObject6')._analyticRulecontentProductId6]",
+        "id": "[variables('analyticRuleObject6')._analyticRulecontentProductId6]",
+        "version": "[variables('analyticRuleObject6').analyticRuleVersion6]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject7').analyticRuleTemplateSpecName7]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamASIMProcessSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject7').analyticRuleVersion7]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject7')._analyticRulecontentId7]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of ASimProcessEventLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - ASIM Process schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nASimProcessEventLogs\n| where TimeGenerated > ago(1h)\n| extend Missing_EventType = isempty(EventType)\n| extend Missing_EventResult = isempty(EventResult)\n| extend Missing_EventVendor = isempty(EventVendor)\n| extend Missing_EventProduct = isempty(EventProduct)\n| extend Missing_EventStartTime = isnull(EventStartTime)\n| extend Missing_EventEndTime = isnull(EventEndTime)\n| extend HasMissingField = Missing_EventType or Missing_EventResult or Missing_EventVendor or Missing_EventProduct or Missing_EventStartTime or Missing_EventEndTime\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingEventType = countif(Missing_EventType),\n    MissingEventResult = countif(Missing_EventResult),\n    MissingEventVendor = countif(Missing_EventVendor),\n    MissingEventProduct = countif(Missing_EventProduct),\n    MissingEventStartTime = countif(Missing_EventStartTime),\n    MissingEventEndTime = countif(Missing_EventEndTime)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"ASimProcessEventLogs\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingEventType, MissingEventResult, MissingEventVendor, MissingEventProduct, MissingEventStartTime, MissingEventEndTime\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "ASimProcessEventLogs"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject7').analyticRuleId7,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 7",
+                "parentId": "[variables('analyticRuleObject7').analyticRuleId7]",
+                "contentId": "[variables('analyticRuleObject7')._analyticRulecontentId7]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject7').analyticRuleVersion7]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject7')._analyticRulecontentId7]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - ASIM Process schema drift",
+        "contentProductId": "[variables('analyticRuleObject7')._analyticRulecontentProductId7]",
+        "id": "[variables('analyticRuleObject7')._analyticRulecontentProductId7]",
+        "version": "[variables('analyticRuleObject7').analyticRuleVersion7]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject8').analyticRuleTemplateSpecName8]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamASIMRegistrySchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject8').analyticRuleVersion8]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject8')._analyticRulecontentId8]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of ASimRegistryEventLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - ASIM Registry schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nASimRegistryEventLogs\n| where TimeGenerated > ago(1h)\n| extend Missing_EventType = isempty(EventType)\n| extend Missing_EventResult = isempty(EventResult)\n| extend Missing_EventVendor = isempty(EventVendor)\n| extend Missing_EventProduct = isempty(EventProduct)\n| extend Missing_EventStartTime = isnull(EventStartTime)\n| extend Missing_EventEndTime = isnull(EventEndTime)\n| extend HasMissingField = Missing_EventType or Missing_EventResult or Missing_EventVendor or Missing_EventProduct or Missing_EventStartTime or Missing_EventEndTime\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingEventType = countif(Missing_EventType),\n    MissingEventResult = countif(Missing_EventResult),\n    MissingEventVendor = countif(Missing_EventVendor),\n    MissingEventProduct = countif(Missing_EventProduct),\n    MissingEventStartTime = countif(Missing_EventStartTime),\n    MissingEventEndTime = countif(Missing_EventEndTime)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"ASimRegistryEventLogs\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingEventType, MissingEventResult, MissingEventVendor, MissingEventProduct, MissingEventStartTime, MissingEventEndTime\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "ASimRegistryEventLogs"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject8').analyticRuleId8,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 8",
+                "parentId": "[variables('analyticRuleObject8').analyticRuleId8]",
+                "contentId": "[variables('analyticRuleObject8')._analyticRulecontentId8]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject8').analyticRuleVersion8]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject8')._analyticRulecontentId8]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - ASIM Registry schema drift",
+        "contentProductId": "[variables('analyticRuleObject8')._analyticRulecontentProductId8]",
+        "id": "[variables('analyticRuleObject8')._analyticRulecontentProductId8]",
+        "version": "[variables('analyticRuleObject8').analyticRuleVersion8]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject9').analyticRuleTemplateSpecName9]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamASIMUserManagementSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject9').analyticRuleVersion9]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject9')._analyticRulecontentId9]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of ASimUserManagementActivityLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - ASIM UserManagement schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nASimUserManagementActivityLogs\n| where TimeGenerated > ago(1h)\n| extend Missing_EventType = isempty(EventType)\n| extend Missing_EventResult = isempty(EventResult)\n| extend Missing_EventVendor = isempty(EventVendor)\n| extend Missing_EventProduct = isempty(EventProduct)\n| extend Missing_EventStartTime = isnull(EventStartTime)\n| extend Missing_EventEndTime = isnull(EventEndTime)\n| extend HasMissingField = Missing_EventType or Missing_EventResult or Missing_EventVendor or Missing_EventProduct or Missing_EventStartTime or Missing_EventEndTime\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingEventType = countif(Missing_EventType),\n    MissingEventResult = countif(Missing_EventResult),\n    MissingEventVendor = countif(Missing_EventVendor),\n    MissingEventProduct = countif(Missing_EventProduct),\n    MissingEventStartTime = countif(Missing_EventStartTime),\n    MissingEventEndTime = countif(Missing_EventEndTime)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"ASimUserManagementActivityLogs\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingEventType, MissingEventResult, MissingEventVendor, MissingEventProduct, MissingEventStartTime, MissingEventEndTime\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "ASimUserManagementActivityLogs"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject9').analyticRuleId9,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 9",
+                "parentId": "[variables('analyticRuleObject9').analyticRuleId9]",
+                "contentId": "[variables('analyticRuleObject9')._analyticRulecontentId9]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject9').analyticRuleVersion9]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject9')._analyticRulecontentId9]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - ASIM UserManagement schema drift",
+        "contentProductId": "[variables('analyticRuleObject9')._analyticRulecontentProductId9]",
+        "id": "[variables('analyticRuleObject9')._analyticRulecontentProductId9]",
+        "version": "[variables('analyticRuleObject9').analyticRuleVersion9]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject10').analyticRuleTemplateSpecName10]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamASIMWebSessionSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject10').analyticRuleVersion10]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject10')._analyticRulecontentId10]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of ASimWebSessionLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - ASIM WebSession schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nASimWebSessionLogs\n| where TimeGenerated > ago(1h)\n| extend Missing_EventType = isempty(EventType)\n| extend Missing_EventResult = isempty(EventResult)\n| extend Missing_EventVendor = isempty(EventVendor)\n| extend Missing_EventProduct = isempty(EventProduct)\n| extend Missing_EventStartTime = isnull(EventStartTime)\n| extend Missing_EventEndTime = isnull(EventEndTime)\n| extend HasMissingField = Missing_EventType or Missing_EventResult or Missing_EventVendor or Missing_EventProduct or Missing_EventStartTime or Missing_EventEndTime\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingEventType = countif(Missing_EventType),\n    MissingEventResult = countif(Missing_EventResult),\n    MissingEventVendor = countif(Missing_EventVendor),\n    MissingEventProduct = countif(Missing_EventProduct),\n    MissingEventStartTime = countif(Missing_EventStartTime),\n    MissingEventEndTime = countif(Missing_EventEndTime)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"ASimWebSessionLogs\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingEventType, MissingEventResult, MissingEventVendor, MissingEventProduct, MissingEventStartTime, MissingEventEndTime\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "ASimWebSessionLogs"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject10').analyticRuleId10,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 10",
+                "parentId": "[variables('analyticRuleObject10').analyticRuleId10]",
+                "contentId": "[variables('analyticRuleObject10')._analyticRulecontentId10]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject10').analyticRuleVersion10]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject10')._analyticRulecontentId10]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - ASIM WebSession schema drift",
+        "contentProductId": "[variables('analyticRuleObject10')._analyticRulecontentProductId10]",
+        "id": "[variables('analyticRuleObject10')._analyticRulecontentProductId10]",
+        "version": "[variables('analyticRuleObject10').analyticRuleVersion10]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject11').analyticRuleTemplateSpecName11]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamCommonSecurityLogSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject11').analyticRuleVersion11]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject11')._analyticRulecontentId11]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of CommonSecurityLog records pushed by the VirtualMetric DataStream connector are missing one or more CEF-mandatory fields (DeviceVendor, DeviceProduct, DeviceEventClassID, Activity). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - CommonSecurityLog schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nCommonSecurityLog\n| where TimeGenerated > ago(1h)\n| extend Missing_DeviceVendor = isempty(DeviceVendor)\n| extend Missing_DeviceProduct = isempty(DeviceProduct)\n| extend Missing_DeviceEventClassID = isempty(DeviceEventClassID)\n| extend Missing_Activity = isempty(Activity)\n| extend HasMissingField = Missing_DeviceVendor or Missing_DeviceProduct or Missing_DeviceEventClassID or Missing_Activity\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingDeviceVendor = countif(Missing_DeviceVendor),\n    MissingDeviceProduct = countif(Missing_DeviceProduct),\n    MissingDeviceEventClassID = countif(Missing_DeviceEventClassID),\n    MissingActivity = countif(Missing_Activity)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"CommonSecurityLog\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingDeviceVendor, MissingDeviceProduct, MissingDeviceEventClassID, MissingActivity\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "CommonSecurityLog"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject11').analyticRuleId11,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 11",
+                "parentId": "[variables('analyticRuleObject11').analyticRuleId11]",
+                "contentId": "[variables('analyticRuleObject11')._analyticRulecontentId11]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject11').analyticRuleVersion11]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject11')._analyticRulecontentId11]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - CommonSecurityLog schema drift",
+        "contentProductId": "[variables('analyticRuleObject11')._analyticRulecontentProductId11]",
+        "id": "[variables('analyticRuleObject11')._analyticRulecontentProductId11]",
+        "version": "[variables('analyticRuleObject11').analyticRuleVersion11]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject12').analyticRuleTemplateSpecName12]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamEventSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject12').analyticRuleVersion12]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject12')._analyticRulecontentId12]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of Event records pushed by the VirtualMetric DataStream connector are missing one or more required fields (EventLog, Computer, EventID, Source). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - Event schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nEvent\n| where TimeGenerated > ago(1h)\n| extend Missing_EventLog = isempty(EventLog)\n| extend Missing_Computer = isempty(Computer)\n| extend Missing_EventID = isnull(EventID) or EventID == 0\n| extend Missing_Source = isempty(Source)\n| extend HasMissingField = Missing_EventLog or Missing_Computer or Missing_EventID or Missing_Source\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingEventLog = countif(Missing_EventLog),\n    MissingComputer = countif(Missing_Computer),\n    MissingEventID = countif(Missing_EventID),\n    MissingSource = countif(Missing_Source)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"Event\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingEventLog, MissingComputer, MissingEventID, MissingSource\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "Event"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject12').analyticRuleId12,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 12",
+                "parentId": "[variables('analyticRuleObject12').analyticRuleId12]",
+                "contentId": "[variables('analyticRuleObject12')._analyticRulecontentId12]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject12').analyticRuleVersion12]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject12')._analyticRulecontentId12]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - Event schema drift",
+        "contentProductId": "[variables('analyticRuleObject12')._analyticRulecontentProductId12]",
+        "id": "[variables('analyticRuleObject12')._analyticRulecontentProductId12]",
+        "version": "[variables('analyticRuleObject12').analyticRuleVersion12]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject13').analyticRuleTemplateSpecName13]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamSecurityEventSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject13').analyticRuleVersion13]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject13')._analyticRulecontentId13]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of SecurityEvent records pushed by the VirtualMetric DataStream connector are missing one or more required fields (EventID, Computer, Channel, Activity). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - SecurityEvent schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nSecurityEvent\n| where TimeGenerated > ago(1h)\n| extend Missing_EventID = isnull(EventID) or EventID == 0\n| extend Missing_Computer = isempty(Computer)\n| extend Missing_Channel = isempty(Channel)\n| extend Missing_Activity = isempty(Activity)\n| extend HasMissingField = Missing_EventID or Missing_Computer or Missing_Channel or Missing_Activity\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingEventID = countif(Missing_EventID),\n    MissingComputer = countif(Missing_Computer),\n    MissingChannel = countif(Missing_Channel),\n    MissingActivity = countif(Missing_Activity)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"SecurityEvent\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingEventID, MissingComputer, MissingChannel, MissingActivity\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "SecurityEvent"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject13').analyticRuleId13,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 13",
+                "parentId": "[variables('analyticRuleObject13').analyticRuleId13]",
+                "contentId": "[variables('analyticRuleObject13')._analyticRulecontentId13]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject13').analyticRuleVersion13]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject13')._analyticRulecontentId13]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - SecurityEvent schema drift",
+        "contentProductId": "[variables('analyticRuleObject13')._analyticRulecontentProductId13]",
+        "id": "[variables('analyticRuleObject13')._analyticRulecontentProductId13]",
+        "version": "[variables('analyticRuleObject13').analyticRuleVersion13]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject14').analyticRuleTemplateSpecName14]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamSyslogSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject14').analyticRuleVersion14]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject14')._analyticRulecontentId14]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of Syslog records pushed by the VirtualMetric DataStream connector are missing one or more required fields (Computer, Facility, SyslogMessage, ProcessName). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - Syslog schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nSyslog\n| where TimeGenerated > ago(1h)\n| extend Missing_Computer = isempty(Computer)\n| extend Missing_Facility = isempty(Facility)\n| extend Missing_SyslogMessage = isempty(SyslogMessage)\n| extend Missing_ProcessName = isempty(ProcessName)\n| extend HasMissingField = Missing_Computer or Missing_Facility or Missing_SyslogMessage or Missing_ProcessName\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingComputer = countif(Missing_Computer),\n    MissingFacility = countif(Missing_Facility),\n    MissingSyslogMessage = countif(Missing_SyslogMessage),\n    MissingProcessName = countif(Missing_ProcessName)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"Syslog\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingComputer, MissingFacility, MissingSyslogMessage, MissingProcessName\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "Syslog"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject14').analyticRuleId14,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 14",
+                "parentId": "[variables('analyticRuleObject14').analyticRuleId14]",
+                "contentId": "[variables('analyticRuleObject14')._analyticRulecontentId14]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject14').analyticRuleVersion14]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject14')._analyticRulecontentId14]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - Syslog schema drift",
+        "contentProductId": "[variables('analyticRuleObject14')._analyticRulecontentProductId14]",
+        "id": "[variables('analyticRuleObject14')._analyticRulecontentProductId14]",
+        "version": "[variables('analyticRuleObject14').analyticRuleVersion14]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject15').analyticRuleTemplateSpecName15]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamWindowsEventSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject15').analyticRuleVersion15]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject15')._analyticRulecontentId15]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when more than 5% of WindowsEvent records pushed by the VirtualMetric DataStream connector are missing one or more required fields (EventID, Computer, Channel, Provider). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.",
+                "displayName": "VirtualMetric DataStream - WindowsEvent schema drift",
+                "enabled": false,
+                "query": "let DriftPct = 5.0;\nlet MinVolume = 100;\nWindowsEvent\n| where TimeGenerated > ago(1h)\n| extend Missing_EventID = isnull(EventID) or EventID == 0\n| extend Missing_Computer = isempty(Computer)\n| extend Missing_Channel = isempty(Channel)\n| extend Missing_Provider = isempty(Provider)\n| extend HasMissingField = Missing_EventID or Missing_Computer or Missing_Channel or Missing_Provider\n| summarize\n    Total = count(),\n    Drifted = countif(HasMissingField),\n    MissingEventID = countif(Missing_EventID),\n    MissingComputer = countif(Missing_Computer),\n    MissingChannel = countif(Missing_Channel),\n    MissingProvider = countif(Missing_Provider)\n| extend DriftPercentage = round(100.0 * Drifted / Total, 2)\n| extend Stream = \"WindowsEvent\"\n| where Total >= MinVolume\n| where DriftPercentage > DriftPct\n| project Stream, Total, Drifted, DriftPercentage, MissingEventID, MissingComputer, MissingChannel, MissingProvider\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "WindowsEvent"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "Total": "Total",
+                  "Stream": "Stream",
+                  "Drifted": "Drifted",
+                  "DriftPercentage": "DriftPercentage"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject15').analyticRuleId15,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 15",
+                "parentId": "[variables('analyticRuleObject15').analyticRuleId15]",
+                "contentId": "[variables('analyticRuleObject15')._analyticRulecontentId15]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject15').analyticRuleVersion15]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject15')._analyticRulecontentId15]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - WindowsEvent schema drift",
+        "contentProductId": "[variables('analyticRuleObject15')._analyticRulecontentProductId15]",
+        "id": "[variables('analyticRuleObject15')._analyticRulecontentProductId15]",
+        "version": "[variables('analyticRuleObject15').analyticRuleVersion15]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject16').analyticRuleTemplateSpecName16]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamIngestionStopped_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject16').analyticRuleVersion16]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject16')._analyticRulecontentId16]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects streams pushed by the VirtualMetric DataStream connector that were active in the past 7 days but have received no events in the last hour. A historical floor of 100 events is applied to avoid alerting on streams that were never actually used. This usually indicates a DataStream agent outage, a credential expiry, or a network issue between the agent and the Data Collection Endpoint.",
+                "displayName": "VirtualMetric DataStream - Ingestion stopped",
+                "enabled": false,
+                "query": "let SilenceWindow = 1h;\nlet MinHistoricalCount = 100;\nlet AllStreams = union withsource=Stream\n    ASimAuditEventLogs,\n    ASimAuthenticationEventLogs,\n    ASimDhcpEventLogs,\n    ASimDnsActivityLogs,\n    ASimFileEventLogs,\n    ASimNetworkSessionLogs,\n    ASimProcessEventLogs,\n    ASimRegistryEventLogs,\n    ASimUserManagementActivityLogs,\n    ASimWebSessionLogs,\n    CommonSecurityLog,\n    Event,\n    SecurityEvent,\n    Syslog,\n    WindowsEvent\n    | where TimeGenerated > ago(7d);\nAllStreams\n| summarize\n    LastSeen = max(TimeGenerated),\n    HistoricalCount = count()\n    by Stream\n| where HistoricalCount >= MinHistoricalCount\n| where LastSeen < ago(SilenceWindow)\n| extend SilenceMinutes = datetime_diff('minute', now(), LastSeen)\n| project Stream, LastSeen, HistoricalCount, SilenceMinutes\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "P7D",
+                "severity": "High",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "ASimAuditEventLogs",
+                      "ASimAuthenticationEventLogs",
+                      "ASimDhcpEventLogs",
+                      "ASimDnsActivityLogs",
+                      "ASimFileEventLogs",
+                      "ASimNetworkSessionLogs",
+                      "ASimProcessEventLogs",
+                      "ASimRegistryEventLogs",
+                      "ASimUserManagementActivityLogs",
+                      "ASimWebSessionLogs"
+                    ]
+                  },
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "CommonSecurityLog",
+                      "Event",
+                      "SecurityEvent",
+                      "Syslog",
+                      "WindowsEvent"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "SilenceMinutes": "SilenceMinutes",
+                  "Stream": "Stream",
+                  "LastSeen": "LastSeen",
+                  "HistoricalCount": "HistoricalCount"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject16').analyticRuleId16,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 16",
+                "parentId": "[variables('analyticRuleObject16').analyticRuleId16]",
+                "contentId": "[variables('analyticRuleObject16')._analyticRulecontentId16]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject16').analyticRuleVersion16]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject16')._analyticRulecontentId16]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - Ingestion stopped",
+        "contentProductId": "[variables('analyticRuleObject16')._analyticRulecontentProductId16]",
+        "id": "[variables('analyticRuleObject16')._analyticRulecontentProductId16]",
+        "version": "[variables('analyticRuleObject16').analyticRuleVersion16]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject17').analyticRuleTemplateSpecName17]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamVolumeSpike_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject17').analyticRuleVersion17]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject17')._analyticRulecontentId17]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when a stream pushed by the VirtualMetric DataStream connector ingests more than 5x its 7-day hourly baseline in the last hour. A floor of 1000 events is applied to the recent window to avoid alerting on tiny streams whose ratios are inherently unstable. This catches misconfigured agents flooding the workspace, runaway debug logging, or an upstream system in an error loop - any of which can drive unexpected ingestion costs.",
+                "displayName": "VirtualMetric DataStream - Volume spike",
+                "enabled": false,
+                "query": "let SpikeMultiplier = 5.0;\nlet MinRecentVolume = 1000;\nlet AllStreams = union withsource=Stream\n    ASimAuditEventLogs,\n    ASimAuthenticationEventLogs,\n    ASimDhcpEventLogs,\n    ASimDnsActivityLogs,\n    ASimFileEventLogs,\n    ASimNetworkSessionLogs,\n    ASimProcessEventLogs,\n    ASimRegistryEventLogs,\n    ASimUserManagementActivityLogs,\n    ASimWebSessionLogs,\n    CommonSecurityLog,\n    Event,\n    SecurityEvent,\n    Syslog,\n    WindowsEvent\n    | where TimeGenerated > ago(7d);\nlet RecentCounts = AllStreams\n    | where TimeGenerated > ago(1h)\n    | summarize RecentCount = count() by Stream;\nlet BaselineCounts = AllStreams\n    | where TimeGenerated between (ago(7d) .. ago(1h))\n    | summarize Count = count() by Stream, Bucket = bin(TimeGenerated, 1h)\n    | summarize BaselineAvg = avg(Count), BaselineStdev = stdev(Count) by Stream;\nRecentCounts\n| join kind=inner BaselineCounts on Stream\n| extend SpikeRatio = todouble(RecentCount) / BaselineAvg\n| where RecentCount > MinRecentVolume\n| where SpikeRatio > SpikeMultiplier\n| project Stream, RecentCount, BaselineAvg = round(BaselineAvg, 1), BaselineStdev = round(BaselineStdev, 1), SpikeRatio = round(SpikeRatio, 2)\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "P7D",
+                "severity": "Medium",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "ASimAuditEventLogs",
+                      "ASimAuthenticationEventLogs",
+                      "ASimDhcpEventLogs",
+                      "ASimDnsActivityLogs",
+                      "ASimFileEventLogs",
+                      "ASimNetworkSessionLogs",
+                      "ASimProcessEventLogs",
+                      "ASimRegistryEventLogs",
+                      "ASimUserManagementActivityLogs",
+                      "ASimWebSessionLogs"
+                    ]
+                  },
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "CommonSecurityLog",
+                      "Event",
+                      "SecurityEvent",
+                      "Syslog",
+                      "WindowsEvent"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "BaselineAvg": "BaselineAvg",
+                  "SpikeRatio": "SpikeRatio",
+                  "RecentCount": "RecentCount",
+                  "Stream": "Stream"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject17').analyticRuleId17,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 17",
+                "parentId": "[variables('analyticRuleObject17').analyticRuleId17]",
+                "contentId": "[variables('analyticRuleObject17')._analyticRulecontentId17]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject17').analyticRuleVersion17]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject17')._analyticRulecontentId17]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - Volume spike",
+        "contentProductId": "[variables('analyticRuleObject17')._analyticRulecontentProductId17]",
+        "id": "[variables('analyticRuleObject17')._analyticRulecontentProductId17]",
+        "version": "[variables('analyticRuleObject17').analyticRuleVersion17]"
+      }
+    },
+    {
+      "type": "Microsoft.OperationalInsights/workspaces/providers/contentTemplates",
+      "apiVersion": "2023-04-01-preview",
+      "name": "[variables('analyticRuleObject18').analyticRuleTemplateSpecName18]",
+      "location": "[parameters('workspace-location')]",
+      "dependsOn": [
+        "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
+      ],
+      "properties": {
+        "description": "VMDataStreamIngestionLatency_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "mainTemplate": {
+          "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+          "contentVersion": "[variables('analyticRuleObject18').analyticRuleVersion18]",
+          "parameters": {},
+          "variables": {},
+          "resources": [
+            {
+              "type": "Microsoft.SecurityInsights/AlertRuleTemplates",
+              "name": "[variables('analyticRuleObject18')._analyticRulecontentId18]",
+              "apiVersion": "2023-02-01-preview",
+              "kind": "Scheduled",
+              "location": "[parameters('workspace-location')]",
+              "properties": {
+                "description": "Detects when the P95 gap between an event's TimeGenerated and its ingestion_time() exceeds 30 minutes for a stream pushed by the VirtualMetric DataStream connector. A floor of 100 sample events per hour is applied. Persistent latency means the DataStream agent is buffering, throttled, or facing backpressure, and detections built on these tables will run against stale data.",
+                "displayName": "VirtualMetric DataStream - Ingestion latency",
+                "enabled": false,
+                "query": "let LatencyThresholdMin = 30;\nlet MinSamples = 100;\nlet AllStreams = union withsource=Stream\n    ASimAuditEventLogs,\n    ASimAuthenticationEventLogs,\n    ASimDhcpEventLogs,\n    ASimDnsActivityLogs,\n    ASimFileEventLogs,\n    ASimNetworkSessionLogs,\n    ASimProcessEventLogs,\n    ASimRegistryEventLogs,\n    ASimUserManagementActivityLogs,\n    ASimWebSessionLogs,\n    CommonSecurityLog,\n    Event,\n    SecurityEvent,\n    Syslog,\n    WindowsEvent\n    | where TimeGenerated > ago(1h);\nAllStreams\n| extend IngestionLatencyMin = abs(datetime_diff('second', ingestion_time(), TimeGenerated)) / 60.0\n| summarize\n    SampleCount = count(),\n    AvgLatencyMin = avg(IngestionLatencyMin),\n    P95LatencyMin = percentile(IngestionLatencyMin, 95),\n    MaxLatencyMin = max(IngestionLatencyMin)\n    by Stream\n| where SampleCount >= MinSamples\n| where P95LatencyMin > LatencyThresholdMin\n| project Stream, SampleCount, AvgLatencyMin = round(AvgLatencyMin, 1), P95LatencyMin = round(P95LatencyMin, 1), MaxLatencyMin = round(MaxLatencyMin, 1)\n",
+                "queryFrequency": "PT1H",
+                "queryPeriod": "PT1H",
+                "severity": "Low",
+                "suppressionDuration": "PT1H",
+                "suppressionEnabled": false,
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "status": "Available",
+                "requiredDataConnectors": [
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "ASimAuditEventLogs",
+                      "ASimAuthenticationEventLogs",
+                      "ASimDhcpEventLogs",
+                      "ASimDnsActivityLogs",
+                      "ASimFileEventLogs",
+                      "ASimNetworkSessionLogs",
+                      "ASimProcessEventLogs",
+                      "ASimRegistryEventLogs",
+                      "ASimUserManagementActivityLogs",
+                      "ASimWebSessionLogs"
+                    ]
+                  },
+                  {
+                    "connectorId": "VirtualMetric-Sentinel",
+                    "dataTypes": [
+                      "CommonSecurityLog",
+                      "Event",
+                      "SecurityEvent",
+                      "Syslog",
+                      "WindowsEvent"
+                    ]
+                  }
+                ],
+                "customDetails": {
+                  "P95LatencyMin": "P95LatencyMin",
+                  "Stream": "Stream",
+                  "SampleCount": "SampleCount",
+                  "MaxLatencyMin": "MaxLatencyMin"
+                }
+              }
+            },
+            {
+              "type": "Microsoft.OperationalInsights/workspaces/providers/metadata",
+              "apiVersion": "2022-01-01-preview",
+              "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/',concat('AnalyticsRule-', last(split(variables('analyticRuleObject18').analyticRuleId18,'/'))))]",
+              "properties": {
+                "description": "VirtualMetric DataStream Analytics Rule 18",
+                "parentId": "[variables('analyticRuleObject18').analyticRuleId18]",
+                "contentId": "[variables('analyticRuleObject18')._analyticRulecontentId18]",
+                "kind": "AnalyticsRule",
+                "version": "[variables('analyticRuleObject18').analyticRuleVersion18]",
+                "source": {
+                  "kind": "Solution",
+                  "name": "VirtualMetric DataStream",
+                  "sourceId": "[variables('_solutionId')]"
+                },
+                "author": {
+                  "name": "VirtualMetric"
+                },
+                "support": {
+                  "name": "VirtualMetric",
+                  "email": "support@virtualmetric.com",
+                  "tier": "Partner",
+                  "link": "https://support.virtualmetric.com"
+                }
+              }
+            }
+          ]
+        },
+        "packageKind": "Solution",
+        "packageVersion": "[variables('_solutionVersion')]",
+        "packageName": "[variables('_solutionName')]",
+        "packageId": "[variables('_solutionId')]",
+        "contentSchemaVersion": "3.0.0",
+        "contentId": "[variables('analyticRuleObject18')._analyticRulecontentId18]",
+        "contentKind": "AnalyticsRule",
+        "displayName": "VirtualMetric DataStream - Ingestion latency",
+        "contentProductId": "[variables('analyticRuleObject18')._analyticRulecontentProductId18]",
+        "id": "[variables('analyticRuleObject18')._analyticRulecontentProductId18]",
+        "version": "[variables('analyticRuleObject18').analyticRuleVersion18]"
+      }
+    },
+    {
       "type": "Microsoft.OperationalInsights/workspaces/providers/contentPackages",
       "apiVersion": "2023-04-01-preview",
       "location": "[parameters('workspace-location')]",
       "properties": {
-        "version": "3.0.0",
+        "version": "3.1.0",
         "kind": "Solution",
         "contentSchemaVersion": "3.0.0",
         "displayName": "VirtualMetric DataStream",
         "publisherDisplayName": "VirtualMetric",
-        "descriptionHtml": "<p><strong>Note:</strong> Please refer to the following before installing the solution:</p>\n<p>• Review the solution <a href=\"https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/VirtualMetric%20DataStream/ReleaseNotes.md\">Release Notes</a></p>\n<p>• There may be <a href=\"https://aka.ms/sentinelsolutionsknownissues\">known issues</a> pertaining to this Solution, please refer to them before installing.</p>\n<p>VirtualMetric DataStream solution provides comprehensive data collection capabilities for Microsoft Sentinel and Microsoft Sentinel data lake, supporting ASIM normalized tables and standard security tables with both native and custom table options.</p>\n<p><strong>Data Connectors:</strong> 3</p>\n<p><a href=\"https://aka.ms/azuresentinel\">Learn more about Microsoft Sentinel</a> | <a href=\"https://aka.ms/azuresentinelsolutionsdoc\">Learn more about Solutions</a></p>\n",
+        "descriptionHtml": "<p><strong>Note:</strong> Please refer to the following before installing the solution:</p>\n<p>• Review the solution <a href=\"https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/VirtualMetric%20DataStream/ReleaseNotes.md\">Release Notes</a></p>\n<p>• There may be <a href=\"https://aka.ms/sentinelsolutionsknownissues\">known issues</a> pertaining to this Solution, please refer to them before installing.</p>\n<p>VirtualMetric DataStream solution provides comprehensive data collection capabilities for Microsoft Sentinel and Microsoft Sentinel data lake, supporting ASIM normalized tables and standard security tables with both native and custom table options.</p>\n<p><strong>Data Connectors:</strong> 3, <strong>Analytic Rules:</strong> 18</p>\n<p><a href=\"https://aka.ms/azuresentinel\">Learn more about Microsoft Sentinel</a> | <a href=\"https://aka.ms/azuresentinelsolutionsdoc\">Learn more about Solutions</a></p>\n",
         "contentKind": "Solution",
         "contentProductId": "[variables('_solutioncontentProductId')]",
         "id": "[variables('_solutioncontentProductId')]",
@@ -1032,6 +2871,96 @@
               "kind": "DataConnector",
               "contentId": "[variables('_dataConnectorContentId3')]",
               "version": "[variables('dataConnectorVersion3')]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject1')._analyticRulecontentId1]",
+              "version": "[variables('analyticRuleObject1').analyticRuleVersion1]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject2')._analyticRulecontentId2]",
+              "version": "[variables('analyticRuleObject2').analyticRuleVersion2]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject3')._analyticRulecontentId3]",
+              "version": "[variables('analyticRuleObject3').analyticRuleVersion3]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject4')._analyticRulecontentId4]",
+              "version": "[variables('analyticRuleObject4').analyticRuleVersion4]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject5')._analyticRulecontentId5]",
+              "version": "[variables('analyticRuleObject5').analyticRuleVersion5]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject6')._analyticRulecontentId6]",
+              "version": "[variables('analyticRuleObject6').analyticRuleVersion6]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject7')._analyticRulecontentId7]",
+              "version": "[variables('analyticRuleObject7').analyticRuleVersion7]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject8')._analyticRulecontentId8]",
+              "version": "[variables('analyticRuleObject8').analyticRuleVersion8]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject9')._analyticRulecontentId9]",
+              "version": "[variables('analyticRuleObject9').analyticRuleVersion9]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject10')._analyticRulecontentId10]",
+              "version": "[variables('analyticRuleObject10').analyticRuleVersion10]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject11')._analyticRulecontentId11]",
+              "version": "[variables('analyticRuleObject11').analyticRuleVersion11]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject12')._analyticRulecontentId12]",
+              "version": "[variables('analyticRuleObject12').analyticRuleVersion12]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject13')._analyticRulecontentId13]",
+              "version": "[variables('analyticRuleObject13').analyticRuleVersion13]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject14')._analyticRulecontentId14]",
+              "version": "[variables('analyticRuleObject14').analyticRuleVersion14]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject15')._analyticRulecontentId15]",
+              "version": "[variables('analyticRuleObject15').analyticRuleVersion15]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject16')._analyticRulecontentId16]",
+              "version": "[variables('analyticRuleObject16').analyticRuleVersion16]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject17')._analyticRulecontentId17]",
+              "version": "[variables('analyticRuleObject17').analyticRuleVersion17]"
+            },
+            {
+              "kind": "AnalyticsRule",
+              "contentId": "[variables('analyticRuleObject18')._analyticRulecontentId18]",
+              "version": "[variables('analyticRuleObject18').analyticRuleVersion18]"
             }
           ]
         },
