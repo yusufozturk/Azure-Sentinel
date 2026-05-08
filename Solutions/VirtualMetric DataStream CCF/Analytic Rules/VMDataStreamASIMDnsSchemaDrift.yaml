@@ -1,0 +1,49 @@
+id: 7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0004
+name: VirtualMetric DataStream - ASIM DNS schema drift
+description: |
+  Detects when more than 5% of ASimDnsActivityLogs records pushed by the VirtualMetric DataStream connector are missing one or more ASIM-mandatory fields (EventType, EventResult, EventVendor, EventProduct, EventStartTime, EventEndTime). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.
+severity: Medium
+status: Available
+requiredDataConnectors:
+  - connectorId: VM-Sentinel-ASIM_CCF
+    dataTypes:
+      - ASimDnsActivityLogs
+queryFrequency: 1h
+queryPeriod: 1h
+triggerOperator: gt
+triggerThreshold: 0
+tactics: []
+relevantTechniques: []
+query: |
+  let DriftPct = 5.0;
+  let MinVolume = 100;
+  ASimDnsActivityLogs
+  | where TimeGenerated > ago(1h)
+  | extend Missing_EventType = isempty(EventType)
+  | extend Missing_EventResult = isempty(EventResult)
+  | extend Missing_EventVendor = isempty(EventVendor)
+  | extend Missing_EventProduct = isempty(EventProduct)
+  | extend Missing_EventStartTime = isnull(EventStartTime)
+  | extend Missing_EventEndTime = isnull(EventEndTime)
+  | extend HasMissingField = Missing_EventType or Missing_EventResult or Missing_EventVendor or Missing_EventProduct or Missing_EventStartTime or Missing_EventEndTime
+  | summarize
+      Total = count(),
+      Drifted = countif(HasMissingField),
+      MissingEventType = countif(Missing_EventType),
+      MissingEventResult = countif(Missing_EventResult),
+      MissingEventVendor = countif(Missing_EventVendor),
+      MissingEventProduct = countif(Missing_EventProduct),
+      MissingEventStartTime = countif(Missing_EventStartTime),
+      MissingEventEndTime = countif(Missing_EventEndTime)
+  | extend DriftPercentage = round(100.0 * Drifted / Total, 2)
+  | extend Stream = "ASimDnsActivityLogs"
+  | where Total >= MinVolume
+  | where DriftPercentage > DriftPct
+  | project Stream, Total, Drifted, DriftPercentage, MissingEventType, MissingEventResult, MissingEventVendor, MissingEventProduct, MissingEventStartTime, MissingEventEndTime
+customDetails:
+  Stream: Stream
+  Total: Total
+  Drifted: Drifted
+  DriftPercentage: DriftPercentage
+kind: Scheduled
+version: 1.0.0

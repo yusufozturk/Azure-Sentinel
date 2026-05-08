@@ -1,0 +1,70 @@
+id: 7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0012
+name: VirtualMetric DataStream - Ingestion latency
+description: |
+  Detects when the P95 gap between an event's TimeGenerated and its ingestion_time() exceeds 30 minutes for a stream pushed by the VirtualMetric DataStream connector. A floor of 100 sample events per hour is applied. Persistent latency means the DataStream agent is buffering, throttled, or facing backpressure, and detections built on these tables will run against stale data.
+severity: Low
+status: Available
+requiredDataConnectors:
+  - connectorId: VM-Sentinel-ASIM_CCF
+    dataTypes:
+      - ASimAuditEventLogs
+      - ASimAuthenticationEventLogs
+      - ASimDhcpEventLogs
+      - ASimDnsActivityLogs
+      - ASimFileEventLogs
+      - ASimNetworkSessionLogs
+      - ASimProcessEventLogs
+      - ASimRegistryEventLogs
+      - ASimUserManagementActivityLogs
+      - ASimWebSessionLogs
+  - connectorId: VM-Sentinel-Standard_CCF
+    dataTypes:
+      - CommonSecurityLog
+      - Event
+      - SecurityEvent
+      - Syslog
+      - WindowsEvent
+queryFrequency: 1h
+queryPeriod: 1h
+triggerOperator: gt
+triggerThreshold: 0
+tactics: []
+relevantTechniques: []
+query: |
+  let LatencyThresholdMin = 30;
+  let MinSamples = 100;
+  let AllStreams = union withsource=Stream
+      ASimAuditEventLogs,
+      ASimAuthenticationEventLogs,
+      ASimDhcpEventLogs,
+      ASimDnsActivityLogs,
+      ASimFileEventLogs,
+      ASimNetworkSessionLogs,
+      ASimProcessEventLogs,
+      ASimRegistryEventLogs,
+      ASimUserManagementActivityLogs,
+      ASimWebSessionLogs,
+      CommonSecurityLog,
+      Event,
+      SecurityEvent,
+      Syslog,
+      WindowsEvent
+      | where TimeGenerated > ago(1h);
+  AllStreams
+  | extend IngestionLatencyMin = abs(datetime_diff('second', ingestion_time(), TimeGenerated)) / 60.0
+  | summarize
+      SampleCount = count(),
+      AvgLatencyMin = avg(IngestionLatencyMin),
+      P95LatencyMin = percentile(IngestionLatencyMin, 95),
+      MaxLatencyMin = max(IngestionLatencyMin)
+      by Stream
+  | where SampleCount >= MinSamples
+  | where P95LatencyMin > LatencyThresholdMin
+  | project Stream, SampleCount, AvgLatencyMin = round(AvgLatencyMin, 1), P95LatencyMin = round(P95LatencyMin, 1), MaxLatencyMin = round(MaxLatencyMin, 1)
+customDetails:
+  Stream: Stream
+  SampleCount: SampleCount
+  P95LatencyMin: P95LatencyMin
+  MaxLatencyMin: MaxLatencyMin
+kind: Scheduled
+version: 1.0.0

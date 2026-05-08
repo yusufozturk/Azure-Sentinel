@@ -1,0 +1,72 @@
+id: 7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0011
+name: VirtualMetric DataStream - Volume spike
+description: |
+  Detects when a stream pushed by the VirtualMetric DataStream connector ingests more than 5x its 7-day hourly baseline in the last hour. A floor of 1000 events is applied to the recent window to avoid alerting on tiny streams whose ratios are inherently unstable. This catches misconfigured agents flooding the workspace, runaway debug logging, or an upstream system in an error loop - any of which can drive unexpected ingestion costs.
+severity: Medium
+status: Available
+requiredDataConnectors:
+  - connectorId: VM-Sentinel-ASIM_CCF
+    dataTypes:
+      - ASimAuditEventLogs
+      - ASimAuthenticationEventLogs
+      - ASimDhcpEventLogs
+      - ASimDnsActivityLogs
+      - ASimFileEventLogs
+      - ASimNetworkSessionLogs
+      - ASimProcessEventLogs
+      - ASimRegistryEventLogs
+      - ASimUserManagementActivityLogs
+      - ASimWebSessionLogs
+  - connectorId: VM-Sentinel-Standard_CCF
+    dataTypes:
+      - CommonSecurityLog
+      - Event
+      - SecurityEvent
+      - Syslog
+      - WindowsEvent
+queryFrequency: 1h
+queryPeriod: 7d
+triggerOperator: gt
+triggerThreshold: 0
+tactics: []
+relevantTechniques: []
+query: |
+  let SpikeMultiplier = 5.0;
+  let MinRecentVolume = 1000;
+  let AllStreams = union withsource=Stream
+      ASimAuditEventLogs,
+      ASimAuthenticationEventLogs,
+      ASimDhcpEventLogs,
+      ASimDnsActivityLogs,
+      ASimFileEventLogs,
+      ASimNetworkSessionLogs,
+      ASimProcessEventLogs,
+      ASimRegistryEventLogs,
+      ASimUserManagementActivityLogs,
+      ASimWebSessionLogs,
+      CommonSecurityLog,
+      Event,
+      SecurityEvent,
+      Syslog,
+      WindowsEvent
+      | where TimeGenerated > ago(7d);
+  let RecentCounts = AllStreams
+      | where TimeGenerated > ago(1h)
+      | summarize RecentCount = count() by Stream;
+  let BaselineCounts = AllStreams
+      | where TimeGenerated between (ago(7d) .. ago(1h))
+      | summarize Count = count() by Stream, Bucket = bin(TimeGenerated, 1h)
+      | summarize BaselineAvg = avg(Count), BaselineStdev = stdev(Count) by Stream;
+  RecentCounts
+  | join kind=inner BaselineCounts on Stream
+  | extend SpikeRatio = todouble(RecentCount) / BaselineAvg
+  | where RecentCount > MinRecentVolume
+  | where SpikeRatio > SpikeMultiplier
+  | project Stream, RecentCount, BaselineAvg = round(BaselineAvg, 1), BaselineStdev = round(BaselineStdev, 1), SpikeRatio = round(SpikeRatio, 2)
+customDetails:
+  Stream: Stream
+  RecentCount: RecentCount
+  BaselineAvg: BaselineAvg
+  SpikeRatio: SpikeRatio
+kind: Scheduled
+version: 1.0.0
