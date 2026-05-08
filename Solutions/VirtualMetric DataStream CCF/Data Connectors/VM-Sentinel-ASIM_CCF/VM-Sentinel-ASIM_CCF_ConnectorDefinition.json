@@ -1,0 +1,259 @@
+﻿{
+    "name":  "VM-Sentinel-ASIM_CCF",
+    "apiVersion":  "2022-09-01-preview",
+    "type":  "Microsoft.SecurityInsights/dataConnectorDefinitions",
+    "location":  "{{location}}",
+    "kind":  "Customizable",
+    "properties":  {
+                       "connectorUiConfig":  {
+                                                 "id":  "VM-Sentinel-ASIM_CCF",
+                                                 "title":  "VirtualMetric DataStream - Sentinel ASIM (Push)",
+                                                 "publisher":  "VirtualMetric",
+                                                 "descriptionMarkdown":  "The [VirtualMetric DataStream](https://docs.virtualmetric.com/) Push connector Pushes the 10 ASIM-normalized telemetry streams (Audit, Authentication, Dhcp, Dns, File, NetworkSession, Process, Registry, UserManagement, WebSession). Authentication, the Data Collection Endpoint, the Data Collection Rule, and required role assignments are provisioned automatically when you click Deploy. After deployment the connection details below are populated and can be copied into your DataStream agent configuration.",
+                                                 "graphQueries":  [
+                                                                      {
+                                                                          "metricName":  "Total ASimAuditEventLogs events received",
+                                                                          "legend":  "ASimAuditEventLogs",
+                                                                          "baseQuery":  "ASimAuditEventLogs | where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'"
+                                                                      },
+                                                                      {
+                                                                          "metricName":  "Total ASimAuthenticationEventLogs events received",
+                                                                          "legend":  "ASimAuthenticationEventLogs",
+                                                                          "baseQuery":  "ASimAuthenticationEventLogs | where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'"
+                                                                      },
+                                                                      {
+                                                                          "metricName":  "Total ASimDhcpEventLogs events received",
+                                                                          "legend":  "ASimDhcpEventLogs",
+                                                                          "baseQuery":  "ASimDhcpEventLogs | where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'"
+                                                                      },
+                                                                      {
+                                                                          "metricName":  "Total ASimDnsActivityLogs events received",
+                                                                          "legend":  "ASimDnsActivityLogs",
+                                                                          "baseQuery":  "ASimDnsActivityLogs | where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'"
+                                                                      },
+                                                                      {
+                                                                          "metricName":  "Total ASimFileEventLogs events received",
+                                                                          "legend":  "ASimFileEventLogs",
+                                                                          "baseQuery":  "ASimFileEventLogs | where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'"
+                                                                      },
+                                                                      {
+                                                                          "metricName":  "Total ASimNetworkSessionLogs events received",
+                                                                          "legend":  "ASimNetworkSessionLogs",
+                                                                          "baseQuery":  "ASimNetworkSessionLogs | where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'"
+                                                                      },
+                                                                      {
+                                                                          "metricName":  "Total ASimProcessEventLogs events received",
+                                                                          "legend":  "ASimProcessEventLogs",
+                                                                          "baseQuery":  "ASimProcessEventLogs | where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'"
+                                                                      },
+                                                                      {
+                                                                          "metricName":  "Total ASimRegistryEventLogs events received",
+                                                                          "legend":  "ASimRegistryEventLogs",
+                                                                          "baseQuery":  "ASimRegistryEventLogs | where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'"
+                                                                      },
+                                                                      {
+                                                                          "metricName":  "Total ASimUserManagementActivityLogs events received",
+                                                                          "legend":  "ASimUserManagementActivityLogs",
+                                                                          "baseQuery":  "ASimUserManagementActivityLogs | where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'"
+                                                                      },
+                                                                      {
+                                                                          "metricName":  "Total ASimWebSessionLogs events received",
+                                                                          "legend":  "ASimWebSessionLogs",
+                                                                          "baseQuery":  "ASimWebSessionLogs | where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'"
+                                                                      }
+                                                                  ],
+                                                 "sampleQueries":  [
+                                                                       {
+                                                                           "description":  "Most recent VirtualMetric events in ASimAuditEventLogs (last 24h)",
+                                                                           "query":  "ASimAuditEventLogs\n| where TimeGenerated > ago(24h)\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'\n| take 100"
+                                                                       },
+                                                                       {
+                                                                           "description":  "Ingestion volume by table (last 7d)",
+                                                                           "query":  "(ASimAuditEventLogs\n| extend SourceTable = 'ASimAuditEventLogs'\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream')\n| union (ASimAuthenticationEventLogs\n| extend SourceTable = 'ASimAuthenticationEventLogs'\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream')\n| union (ASimDhcpEventLogs\n| extend SourceTable = 'ASimDhcpEventLogs'\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream')\n| union (ASimDnsActivityLogs\n| extend SourceTable = 'ASimDnsActivityLogs'\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream')\n| union (ASimFileEventLogs\n| extend SourceTable = 'ASimFileEventLogs'\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream')\n| union (ASimNetworkSessionLogs\n| extend SourceTable = 'ASimNetworkSessionLogs'\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream')\n| union (ASimProcessEventLogs\n| extend SourceTable = 'ASimProcessEventLogs'\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream')\n| union (ASimRegistryEventLogs\n| extend SourceTable = 'ASimRegistryEventLogs'\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream')\n| union (ASimUserManagementActivityLogs\n| extend SourceTable = 'ASimUserManagementActivityLogs'\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream')\n| union (ASimWebSessionLogs\n| extend SourceTable = 'ASimWebSessionLogs'\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream')"
+                                                                       }
+                                                                   ],
+                                                 "dataTypes":  [
+                                                                   {
+                                                                       "name":  "ASimAuditEventLogs",
+                                                                       "lastDataReceivedQuery":  "ASimAuditEventLogs\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                                                                   },
+                                                                   {
+                                                                       "name":  "ASimAuthenticationEventLogs",
+                                                                       "lastDataReceivedQuery":  "ASimAuthenticationEventLogs\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                                                                   },
+                                                                   {
+                                                                       "name":  "ASimDhcpEventLogs",
+                                                                       "lastDataReceivedQuery":  "ASimDhcpEventLogs\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                                                                   },
+                                                                   {
+                                                                       "name":  "ASimDnsActivityLogs",
+                                                                       "lastDataReceivedQuery":  "ASimDnsActivityLogs\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                                                                   },
+                                                                   {
+                                                                       "name":  "ASimFileEventLogs",
+                                                                       "lastDataReceivedQuery":  "ASimFileEventLogs\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                                                                   },
+                                                                   {
+                                                                       "name":  "ASimNetworkSessionLogs",
+                                                                       "lastDataReceivedQuery":  "ASimNetworkSessionLogs\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                                                                   },
+                                                                   {
+                                                                       "name":  "ASimProcessEventLogs",
+                                                                       "lastDataReceivedQuery":  "ASimProcessEventLogs\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                                                                   },
+                                                                   {
+                                                                       "name":  "ASimRegistryEventLogs",
+                                                                       "lastDataReceivedQuery":  "ASimRegistryEventLogs\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                                                                   },
+                                                                   {
+                                                                       "name":  "ASimUserManagementActivityLogs",
+                                                                       "lastDataReceivedQuery":  "ASimUserManagementActivityLogs\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                                                                   },
+                                                                   {
+                                                                       "name":  "ASimWebSessionLogs",
+                                                                       "lastDataReceivedQuery":  "ASimWebSessionLogs\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                                                                   }
+                                                               ],
+                                                 "connectivityCriteria":  [
+                                                                              {
+                                                                                  "type":  "IsConnectedQuery",
+                                                                                  "value":  [
+                                                                                                "ASimAuditEventLogs\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
+                                                                                                "ASimAuthenticationEventLogs\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
+                                                                                                "ASimDhcpEventLogs\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
+                                                                                                "ASimDnsActivityLogs\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
+                                                                                                "ASimFileEventLogs\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
+                                                                                                "ASimNetworkSessionLogs\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
+                                                                                                "ASimProcessEventLogs\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
+                                                                                                "ASimRegistryEventLogs\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
+                                                                                                "ASimUserManagementActivityLogs\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
+                                                                                                "ASimWebSessionLogs\n| where EventVendor == 'VirtualMetric' or EventProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)"
+                                                                                            ]
+                                                                              }
+                                                                          ],
+                                                 "isConnectivityCriteriasMatchSome":  true,
+                                                 "availability":  {
+                                                                      "status":  1,
+                                                                      "isPreview":  true
+                                                                  },
+                                                 "permissions":  {
+                                                                     "resourceProvider":  [
+                                                                                              {
+                                                                                                  "provider":  "Microsoft.OperationalInsights/workspaces",
+                                                                                                  "permissionsDisplayText":  "read and write permissions are required.",
+                                                                                                  "providerDisplayName":  "Workspace",
+                                                                                                  "scope":  "Workspace",
+                                                                                                  "requiredPermissions":  {
+                                                                                                                              "write":  true,
+                                                                                                                              "read":  true,
+                                                                                                                              "delete":  true
+                                                                                                                          }
+                                                                                              }
+                                                                                          ],
+                                                                     "customs":  [
+                                                                                     {
+                                                                                         "name":  "Microsoft Entra",
+                                                                                         "description":  "Permission to create an app registration in Microsoft Entra ID. Typically requires Entra ID Application Developer role or higher."
+                                                                                     },
+                                                                                     {
+                                                                                         "name":  "Microsoft Azure",
+                                                                                         "description":  "Permission to assign the Monitoring Metrics Publisher role on the Data Collection Rule. Typically requires Azure RBAC Owner or User Access Administrator role."
+                                                                                     },
+                                                                                     {
+                                                                                         "name":  "VirtualMetric DataStream Agent",
+                                                                                         "description":  "A running [VirtualMetric DataStream](https://docs.virtualmetric.com/) agent is required to collect, normalize, and push events to the Microsoft Sentinel Logs Ingestion API."
+                                                                                     }
+                                                                                 ]
+                                                                 },
+                                                 "instructionSteps":  [
+                                                                          {
+                                                                              "title":  "1. Deploy connector resources",
+                                                                              "description":  "This connector enables the VirtualMetric DataStream agent to push events directly to Microsoft Sentinel via the Azure Monitor Logs Ingestion API. No manual app registration or DCR setup is required.",
+                                                                              "instructions":  [
+                                                                                                   {
+                                                                                                       "type":  "Markdown",
+                                                                                                       "parameters":  {
+                                                                                                                          "content":  "Clicking **Deploy** will create:\n- A Data Collection Rule (DCR) with 10 stream(s) routing to the built-in Microsoft Sentinel tables (ASimAuditEventLogs, ASimAuthenticationEventLogs, ASimDhcpEventLogs, ASimDnsActivityLogs, ASimFileEventLogs, ASimNetworkSessionLogs, ASimProcessEventLogs, ASimRegistryEventLogs, ASimUserManagementActivityLogs, ASimWebSessionLogs)\n- A Data Collection Endpoint (DCE)\n- A Microsoft Entra application with OAuth client credentials\n- The Monitoring Metrics Publisher role assignment for that application on the DCR\n\nNo custom tables are created — events land in the built-in tables, so existing analytics rules, workbooks, and parsers continue to work unchanged."
+                                                                                                                      }
+                                                                                                   },
+                                                                                                   {
+                                                                                                       "type":  "DeployPushConnectorButton",
+                                                                                                       "parameters":  {
+                                                                                                                          "label":  "Deploy connector resources",
+                                                                                                                          "applicationDisplayName":  "VirtualMetric DataStream Sentinel-ASIM Push Connector"
+                                                                                                                      }
+                                                                                                   }
+                                                                                               ]
+                                                                          },
+                                                                          {
+                                                                              "title":  "2. Configure the VirtualMetric DataStream agent",
+                                                                              "description":  "After the deployment completes, copy the values below into your VirtualMetric DataStream agent configuration. The DataStream agent uses these to authenticate with Microsoft Entra and push events to the Data Collection Endpoint.",
+                                                                              "instructions":  [
+                                                                                                   {
+                                                                                                       "type":  "CopyableLabel",
+                                                                                                       "parameters":  {
+                                                                                                                          "label":  "Tenant ID (Directory ID)",
+                                                                                                                          "fillWith":  [
+                                                                                                                                           "TenantId"
+                                                                                                                                       ]
+                                                                                                                      }
+                                                                                                   },
+                                                                                                   {
+                                                                                                       "type":  "CopyableLabel",
+                                                                                                       "parameters":  {
+                                                                                                                          "label":  "Application (Client) ID",
+                                                                                                                          "fillWith":  [
+                                                                                                                                           "ApplicationId"
+                                                                                                                                       ],
+                                                                                                                          "placeholder":  "Deploy connector resources to populate this value"
+                                                                                                                      }
+                                                                                                   },
+                                                                                                   {
+                                                                                                       "type":  "CopyableLabel",
+                                                                                                       "parameters":  {
+                                                                                                                          "label":  "Client Secret (only shown once)",
+                                                                                                                          "fillWith":  [
+                                                                                                                                           "ApplicationSecret"
+                                                                                                                                       ],
+                                                                                                                          "placeholder":  "Deploy connector resources to populate this value"
+                                                                                                                      }
+                                                                                                   },
+                                                                                                   {
+                                                                                                       "type":  "CopyableLabel",
+                                                                                                       "parameters":  {
+                                                                                                                          "label":  "Data Collection Endpoint Logs Ingestion URI",
+                                                                                                                          "fillWith":  [
+                                                                                                                                           "DataCollectionEndpoint"
+                                                                                                                                       ],
+                                                                                                                          "placeholder":  "Deploy connector resources to populate this value"
+                                                                                                                      }
+                                                                                                   },
+                                                                                                   {
+                                                                                                       "type":  "CopyableLabel",
+                                                                                                       "parameters":  {
+                                                                                                                          "label":  "Data Collection Rule Immutable ID",
+                                                                                                                          "fillWith":  [
+                                                                                                                                           "DataCollectionRuleId"
+                                                                                                                                       ],
+                                                                                                                          "placeholder":  "Deploy connector resources to populate this value"
+                                                                                                                      }
+                                                                                                   },
+                                                                                                   {
+                                                                                                       "type":  "Markdown",
+                                                                                                       "parameters":  {
+                                                                                                                          "content":  "Configure these stream names in the VirtualMetric DataStream agent so each event type is routed to the matching table:\n\n- `Custom-ASimAuditEventLogs`\n- `Custom-ASimAuthenticationEventLogs`\n- `Custom-ASimDhcpEventLogs`\n- `Custom-ASimDnsActivityLogs`\n- `Custom-ASimFileEventLogs`\n- `Custom-ASimNetworkSessionLogs`\n- `Custom-ASimProcessEventLogs`\n- `Custom-ASimRegistryEventLogs`\n- `Custom-ASimUserManagementActivityLogs`\n- `Custom-ASimWebSessionLogs`"
+                                                                                                                      }
+                                                                                                   }
+                                                                                               ]
+                                                                          },
+                                                                          {
+                                                                              "title":  "3. Verify ingestion",
+                                                                              "description":  "After enabling the integration in the VirtualMetric DataStream agent, allow 5-10 minutes for the first events to appear, then run the sample queries above. If no data appears, verify the DataStream agent has reachability to the Data Collection Endpoint and that the Entra application credentials match.",
+                                                                              "instructions":  [
+
+                                                                                               ]
+                                                                          }
+                                                                      ]
+                                             }
+                   }
+}

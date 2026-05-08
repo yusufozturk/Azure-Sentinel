@@ -1,0 +1,16 @@
+{
+  "Name": "VirtualMetric DataStream CCF",
+  "Author": "VirtualMetric",
+  "Logo": "<img src=\"https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/Logos/VirtualMetric.svg\" width=\"75px\" height=\"75px\">",
+  "Description": "The [VirtualMetric DataStream](https://docs.virtualmetric.com/) Codeless Connector Framework (CCF) Push solution lets the VirtualMetric DataStream agent push security and ASIM-normalized telemetry directly to Microsoft Sentinel. Two tiles let you selectively enable Standard streams (CommonSecurityLog, SecurityEvent, Event, Syslog, WindowsEvent) or ASIM-normalized streams (Audit, Authentication, Dhcp, Dns, File, NetworkSession, Process, Registry, UserManagement, WebSession). Both tiles share a single Data Collection Endpoint per workspace. Authentication, DCR provisioning, Entra app, and required role assignments are automated when each tile's Deploy button is clicked.",
+  "Data Connectors": [
+    "Data Connectors/VM-Sentinel-Standard_CCF/VM-Sentinel-Standard_CCF_ConnectorDefinition.json",
+    "Data Connectors/VM-Sentinel-ASIM_CCF/VM-Sentinel-ASIM_CCF_ConnectorDefinition.json"
+  ],
+  "BasePath": "C:\\Repos\\github.com\\yusufozturk\\Azure-Sentinel\\Solutions\\VirtualMetric DataStream CCF",
+  "Version": "3.0.1",
+  "DataConnectorCCFVersion": "3.0.0",
+  "Metadata": "SolutionMetadata.json",
+  "TemplateSpec": true,
+  "Is1PConnector": false
+}
