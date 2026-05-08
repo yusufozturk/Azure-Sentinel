@@ -1,0 +1,45 @@
+id: 7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000b
+name: VirtualMetric DataStream - CommonSecurityLog schema drift
+description: |
+  Detects when more than 5% of CommonSecurityLog records pushed by the VirtualMetric DataStream connector are missing one or more CEF-mandatory fields (DeviceVendor, DeviceProduct, DeviceEventClassID, Activity). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.
+severity: Medium
+status: Available
+requiredDataConnectors:
+  - connectorId: VirtualMetric-Sentinel
+    dataTypes:
+      - CommonSecurityLog
+queryFrequency: 1h
+queryPeriod: 1h
+triggerOperator: gt
+triggerThreshold: 0
+tactics: []
+relevantTechniques: []
+query: |
+  let DriftPct = 5.0;
+  let MinVolume = 100;
+  CommonSecurityLog
+  | where TimeGenerated > ago(1h)
+  | extend Missing_DeviceVendor = isempty(DeviceVendor)
+  | extend Missing_DeviceProduct = isempty(DeviceProduct)
+  | extend Missing_DeviceEventClassID = isempty(DeviceEventClassID)
+  | extend Missing_Activity = isempty(Activity)
+  | extend HasMissingField = Missing_DeviceVendor or Missing_DeviceProduct or Missing_DeviceEventClassID or Missing_Activity
+  | summarize
+      Total = count(),
+      Drifted = countif(HasMissingField),
+      MissingDeviceVendor = countif(Missing_DeviceVendor),
+      MissingDeviceProduct = countif(Missing_DeviceProduct),
+      MissingDeviceEventClassID = countif(Missing_DeviceEventClassID),
+      MissingActivity = countif(Missing_Activity)
+  | extend DriftPercentage = round(100.0 * Drifted / Total, 2)
+  | extend Stream = "CommonSecurityLog"
+  | where Total >= MinVolume
+  | where DriftPercentage > DriftPct
+  | project Stream, Total, Drifted, DriftPercentage, MissingDeviceVendor, MissingDeviceProduct, MissingDeviceEventClassID, MissingActivity
+customDetails:
+  Stream: Stream
+  Total: Total
+  Drifted: Drifted
+  DriftPercentage: DriftPercentage
+kind: Scheduled
+version: 1.0.0

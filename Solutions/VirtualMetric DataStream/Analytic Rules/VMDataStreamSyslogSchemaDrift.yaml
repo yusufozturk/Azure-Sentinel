@@ -1,0 +1,45 @@
+id: 7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000e
+name: VirtualMetric DataStream - Syslog schema drift
+description: |
+  Detects when more than 5% of Syslog records pushed by the VirtualMetric DataStream connector are missing one or more required fields (Computer, Facility, SyslogMessage, ProcessName). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.
+severity: Medium
+status: Available
+requiredDataConnectors:
+  - connectorId: VirtualMetric-Sentinel
+    dataTypes:
+      - Syslog
+queryFrequency: 1h
+queryPeriod: 1h
+triggerOperator: gt
+triggerThreshold: 0
+tactics: []
+relevantTechniques: []
+query: |
+  let DriftPct = 5.0;
+  let MinVolume = 100;
+  Syslog
+  | where TimeGenerated > ago(1h)
+  | extend Missing_Computer = isempty(Computer)
+  | extend Missing_Facility = isempty(Facility)
+  | extend Missing_SyslogMessage = isempty(SyslogMessage)
+  | extend Missing_ProcessName = isempty(ProcessName)
+  | extend HasMissingField = Missing_Computer or Missing_Facility or Missing_SyslogMessage or Missing_ProcessName
+  | summarize
+      Total = count(),
+      Drifted = countif(HasMissingField),
+      MissingComputer = countif(Missing_Computer),
+      MissingFacility = countif(Missing_Facility),
+      MissingSyslogMessage = countif(Missing_SyslogMessage),
+      MissingProcessName = countif(Missing_ProcessName)
+  | extend DriftPercentage = round(100.0 * Drifted / Total, 2)
+  | extend Stream = "Syslog"
+  | where Total >= MinVolume
+  | where DriftPercentage > DriftPct
+  | project Stream, Total, Drifted, DriftPercentage, MissingComputer, MissingFacility, MissingSyslogMessage, MissingProcessName
+customDetails:
+  Stream: Stream
+  Total: Total
+  Drifted: Drifted
+  DriftPercentage: DriftPercentage
+kind: Scheduled
+version: 1.0.0

@@ -2,22 +2,22 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "workspace": {
+        "workspaceName": {
             "type": "string",
             "metadata": {
-                "description": "Log Analytics Workspace for Microsoft Sentinel"
+                "description": "Log Analytics Workspace Name for Microsoft Sentinel"
             }
         },
         "DCEName": {
             "type": "string",
-            "defaultValue": "vmetric-dce",
+            "defaultValue": "dce-vmetric",
             "metadata": {
                 "description": "Data Collection Endpoint Name"
             }
         },
         "DCRNamePrefix": {
             "type": "string",
-            "defaultValue": "vmetric-dcr",
+            "defaultValue": "dcr-vmetric",
             "metadata": {
                 "description": "Data Collection Rule Name Prefix"
             }
@@ -27,7 +27,7 @@
         "location": "[resourceGroup().location]",
         "subscription": "[subscription().subscriptionId]",
         "resourceGroupName": "[resourceGroup().name]",
-        "workspaceResourceId": "[resourceId('microsoft.OperationalInsights/Workspaces', parameters('workspace'))]",
+        "workspaceResourceId": "[resourceId('microsoft.OperationalInsights/Workspaces', parameters('workspaceName'))]",
         "dceImmutableId": "[guid(parameters('DCEName'))]",
         "dcrNameForASIM": "[concat(parameters('DCRNamePrefix'), '-asim-', uniqueString(resourceGroup().id))]",
         "dcrNameForStandard": "[concat(parameters('DCRNamePrefix'), '-standard-', uniqueString(resourceGroup().id))]"

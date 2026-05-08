@@ -1,0 +1,45 @@
+id: 7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000c
+name: VirtualMetric DataStream - Event schema drift
+description: |
+  Detects when more than 5% of Event records pushed by the VirtualMetric DataStream connector are missing one or more required fields (EventLog, Computer, EventID, Source). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.
+severity: Medium
+status: Available
+requiredDataConnectors:
+  - connectorId: VirtualMetric-Sentinel
+    dataTypes:
+      - Event
+queryFrequency: 1h
+queryPeriod: 1h
+triggerOperator: gt
+triggerThreshold: 0
+tactics: []
+relevantTechniques: []
+query: |
+  let DriftPct = 5.0;
+  let MinVolume = 100;
+  Event
+  | where TimeGenerated > ago(1h)
+  | extend Missing_EventLog = isempty(EventLog)
+  | extend Missing_Computer = isempty(Computer)
+  | extend Missing_EventID = isnull(EventID) or EventID == 0
+  | extend Missing_Source = isempty(Source)
+  | extend HasMissingField = Missing_EventLog or Missing_Computer or Missing_EventID or Missing_Source
+  | summarize
+      Total = count(),
+      Drifted = countif(HasMissingField),
+      MissingEventLog = countif(Missing_EventLog),
+      MissingComputer = countif(Missing_Computer),
+      MissingEventID = countif(Missing_EventID),
+      MissingSource = countif(Missing_Source)
+  | extend DriftPercentage = round(100.0 * Drifted / Total, 2)
+  | extend Stream = "Event"
+  | where Total >= MinVolume
+  | where DriftPercentage > DriftPct
+  | project Stream, Total, Drifted, DriftPercentage, MissingEventLog, MissingComputer, MissingEventID, MissingSource
+customDetails:
+  Stream: Stream
+  Total: Total
+  Drifted: Drifted
+  DriftPercentage: DriftPercentage
+kind: Scheduled
+version: 1.0.0

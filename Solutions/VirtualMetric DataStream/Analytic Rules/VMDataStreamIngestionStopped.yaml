@@ -1,0 +1,68 @@
+id: 7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a0010
+name: VirtualMetric DataStream - Ingestion stopped
+description: |
+  Detects streams pushed by the VirtualMetric DataStream connector that were active in the past 7 days but have received no events in the last hour. A historical floor of 100 events is applied to avoid alerting on streams that were never actually used. This usually indicates a DataStream agent outage, a credential expiry, or a network issue between the agent and the Data Collection Endpoint.
+severity: High
+status: Available
+requiredDataConnectors:
+  - connectorId: VirtualMetric-Sentinel
+    dataTypes:
+      - ASimAuditEventLogs
+      - ASimAuthenticationEventLogs
+      - ASimDhcpEventLogs
+      - ASimDnsActivityLogs
+      - ASimFileEventLogs
+      - ASimNetworkSessionLogs
+      - ASimProcessEventLogs
+      - ASimRegistryEventLogs
+      - ASimUserManagementActivityLogs
+      - ASimWebSessionLogs
+  - connectorId: VirtualMetric-Sentinel
+    dataTypes:
+      - CommonSecurityLog
+      - Event
+      - SecurityEvent
+      - Syslog
+      - WindowsEvent
+queryFrequency: 1h
+queryPeriod: 7d
+triggerOperator: gt
+triggerThreshold: 0
+tactics: []
+relevantTechniques: []
+query: |
+  let SilenceWindow = 1h;
+  let MinHistoricalCount = 100;
+  let AllStreams = union withsource=Stream
+      ASimAuditEventLogs,
+      ASimAuthenticationEventLogs,
+      ASimDhcpEventLogs,
+      ASimDnsActivityLogs,
+      ASimFileEventLogs,
+      ASimNetworkSessionLogs,
+      ASimProcessEventLogs,
+      ASimRegistryEventLogs,
+      ASimUserManagementActivityLogs,
+      ASimWebSessionLogs,
+      CommonSecurityLog,
+      Event,
+      SecurityEvent,
+      Syslog,
+      WindowsEvent
+      | where TimeGenerated > ago(7d);
+  AllStreams
+  | summarize
+      LastSeen = max(TimeGenerated),
+      HistoricalCount = count()
+      by Stream
+  | where HistoricalCount >= MinHistoricalCount
+  | where LastSeen < ago(SilenceWindow)
+  | extend SilenceMinutes = datetime_diff('minute', now(), LastSeen)
+  | project Stream, LastSeen, HistoricalCount, SilenceMinutes
+customDetails:
+  Stream: Stream
+  LastSeen: LastSeen
+  HistoricalCount: HistoricalCount
+  SilenceMinutes: SilenceMinutes
+kind: Scheduled
+version: 1.0.0

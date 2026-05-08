@@ -1,0 +1,45 @@
+id: 7a7b3a3e-2c8a-4b1f-9b1a-1c1c0a8a000d
+name: VirtualMetric DataStream - SecurityEvent schema drift
+description: |
+  Detects when more than 5% of SecurityEvent records pushed by the VirtualMetric DataStream connector are missing one or more required fields (EventID, Computer, Channel, Activity). A floor of 100 events per hour is applied to avoid noise on low-volume streams. Persistent drift indicates an agent-side mapping regression and should be investigated by the data engineering team.
+severity: Medium
+status: Available
+requiredDataConnectors:
+  - connectorId: VirtualMetric-Sentinel
+    dataTypes:
+      - SecurityEvent
+queryFrequency: 1h
+queryPeriod: 1h
+triggerOperator: gt
+triggerThreshold: 0
+tactics: []
+relevantTechniques: []
+query: |
+  let DriftPct = 5.0;
+  let MinVolume = 100;
+  SecurityEvent
+  | where TimeGenerated > ago(1h)
+  | extend Missing_EventID = isnull(EventID) or EventID == 0
+  | extend Missing_Computer = isempty(Computer)
+  | extend Missing_Channel = isempty(Channel)
+  | extend Missing_Activity = isempty(Activity)
+  | extend HasMissingField = Missing_EventID or Missing_Computer or Missing_Channel or Missing_Activity
+  | summarize
+      Total = count(),
+      Drifted = countif(HasMissingField),
+      MissingEventID = countif(Missing_EventID),
+      MissingComputer = countif(Missing_Computer),
+      MissingChannel = countif(Missing_Channel),
+      MissingActivity = countif(Missing_Activity)
+  | extend DriftPercentage = round(100.0 * Drifted / Total, 2)
+  | extend Stream = "SecurityEvent"
+  | where Total >= MinVolume
+  | where DriftPercentage > DriftPct
+  | project Stream, Total, Drifted, DriftPercentage, MissingEventID, MissingComputer, MissingChannel, MissingActivity
+customDetails:
+  Stream: Stream
+  Total: Total
+  Drifted: Drifted
+  DriftPercentage: DriftPercentage
+kind: Scheduled
+version: 1.0.0
