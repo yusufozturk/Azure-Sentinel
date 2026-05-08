@@ -45,7 +45,7 @@
   },
   "variables": {
     "_solutionName": "VirtualMetric DataStream CCF",
-    "_solutionVersion": "3.1.0",
+    "_solutionVersion": "3.1.1",
     "solutionId": "virtualmetric.azure-sentinel-solution-virtualmetric-datastream-ccf",
     "_solutionId": "[variables('solutionId')]",
     "workspaceResourceId": "[resourceId('microsoft.OperationalInsights/Workspaces', parameters('workspace'))]",
@@ -200,7 +200,7 @@
       ],
       "properties": {
         "contentId": "[variables('_dataConnectorContentIdConnectorDefinition1')]",
-        "displayName": "VirtualMetric DataStream - Sentinel Standard (Push)",
+        "displayName": "VirtualMetric DataStream - Microsoft Sentinel Standard (Push)",
         "contentKind": "DataConnector",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
@@ -217,7 +217,7 @@
               "properties": {
                 "connectorUiConfig": {
                   "id": "VM-Sentinel-Standard_CCF",
-                  "title": "VirtualMetric DataStream - Sentinel Standard (Push)",
+                  "title": "VirtualMetric DataStream - Microsoft Sentinel Standard (Push)",
                   "publisher": "VirtualMetric",
                   "descriptionMarkdown": "The [VirtualMetric DataStream](https://docs.virtualmetric.com/) Push connector Pushes CommonSecurityLog, SecurityEvent, Event, Syslog, and WindowsEvent telemetry. Authentication, the Data Collection Endpoint, the Data Collection Rule, and required role assignments are provisioned automatically when you click Deploy. After deployment the connection details below are populated and can be copied into your DataStream agent configuration.",
                   "graphQueries": [
@@ -340,7 +340,7 @@
                           "type": "DeployPushConnectorButton",
                           "parameters": {
                             "label": "Deploy connector resources",
-                            "applicationDisplayName": "VirtualMetric DataStream Sentinel-Standard Push Connector"
+                            "applicationDisplayName": "VirtualMetric DataStream Microsoft Sentinel Standard Push Connector"
                           }
                         }
                       ]
@@ -2229,7 +2229,7 @@
       "properties": {
         "connectorUiConfig": {
           "id": "VM-Sentinel-Standard_CCF",
-          "title": "VirtualMetric DataStream - Sentinel Standard (Push)",
+          "title": "VirtualMetric DataStream - Microsoft Sentinel Standard (Push)",
           "publisher": "VirtualMetric",
           "descriptionMarkdown": "The [VirtualMetric DataStream](https://docs.virtualmetric.com/) Push connector Pushes CommonSecurityLog, SecurityEvent, Event, Syslog, and WindowsEvent telemetry. Authentication, the Data Collection Endpoint, the Data Collection Rule, and required role assignments are provisioned automatically when you click Deploy. After deployment the connection details below are populated and can be copied into your DataStream agent configuration.",
           "graphQueries": [
@@ -2352,7 +2352,7 @@
                   "type": "DeployPushConnectorButton",
                   "parameters": {
                     "label": "Deploy connector resources",
-                    "applicationDisplayName": "VirtualMetric DataStream Sentinel-Standard Push Connector"
+                    "applicationDisplayName": "VirtualMetric DataStream Microsoft Sentinel Standard Push Connector"
                   }
                 }
               ]
@@ -2471,7 +2471,7 @@
       ],
       "properties": {
         "contentId": "[variables('_dataConnectorContentIdConnections1')]",
-        "displayName": "VirtualMetric DataStream - Sentinel Standard (Push)",
+        "displayName": "VirtualMetric DataStream - Microsoft Sentinel Standard (Push)",
         "contentKind": "ResourcesDataConnector",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
@@ -2493,7 +2493,7 @@
               }
             },
             "connectorDefinitionName": {
-              "defaultValue": "VirtualMetric DataStream - Sentinel Standard (Push)",
+              "defaultValue": "VirtualMetric DataStream - Microsoft Sentinel Standard (Push)",
               "type": "securestring",
               "minLength": 1
             },
@@ -2587,7 +2587,7 @@
       ],
       "properties": {
         "contentId": "[variables('_dataConnectorContentIdConnectorDefinition2')]",
-        "displayName": "VirtualMetric DataStream - Sentinel ASIM (Push)",
+        "displayName": "VirtualMetric DataStream - Microsoft Sentinel ASIM (Push)",
         "contentKind": "DataConnector",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
@@ -2604,7 +2604,7 @@
               "properties": {
                 "connectorUiConfig": {
                   "id": "VM-Sentinel-ASIM_CCF",
-                  "title": "VirtualMetric DataStream - Sentinel ASIM (Push)",
+                  "title": "VirtualMetric DataStream - Microsoft Sentinel ASIM (Push)",
                   "publisher": "VirtualMetric",
                   "descriptionMarkdown": "The [VirtualMetric DataStream](https://docs.virtualmetric.com/) Push connector Pushes the 10 ASIM-normalized telemetry streams (Audit, Authentication, Dhcp, Dns, File, NetworkSession, Process, Registry, UserManagement, WebSession). Authentication, the Data Collection Endpoint, the Data Collection Rule, and required role assignments are provisioned automatically when you click Deploy. After deployment the connection details below are populated and can be copied into your DataStream agent configuration.",
                   "graphQueries": [
@@ -2777,7 +2777,7 @@
                           "type": "DeployPushConnectorButton",
                           "parameters": {
                             "label": "Deploy connector resources",
-                            "applicationDisplayName": "VirtualMetric DataStream Sentinel-ASIM Push Connector"
+                            "applicationDisplayName": "VirtualMetric DataStream Microsoft Sentinel ASIM Push Connector"
                           }
                         }
                       ]
@@ -7920,7 +7920,7 @@
       "properties": {
         "connectorUiConfig": {
           "id": "VM-Sentinel-ASIM_CCF",
-          "title": "VirtualMetric DataStream - Sentinel ASIM (Push)",
+          "title": "VirtualMetric DataStream - Microsoft Sentinel ASIM (Push)",
           "publisher": "VirtualMetric",
           "descriptionMarkdown": "The [VirtualMetric DataStream](https://docs.virtualmetric.com/) Push connector Pushes the 10 ASIM-normalized telemetry streams (Audit, Authentication, Dhcp, Dns, File, NetworkSession, Process, Registry, UserManagement, WebSession). Authentication, the Data Collection Endpoint, the Data Collection Rule, and required role assignments are provisioned automatically when you click Deploy. After deployment the connection details below are populated and can be copied into your DataStream agent configuration.",
           "graphQueries": [
@@ -8093,7 +8093,7 @@
                   "type": "DeployPushConnectorButton",
                   "parameters": {
                     "label": "Deploy connector resources",
-                    "applicationDisplayName": "VirtualMetric DataStream Sentinel-ASIM Push Connector"
+                    "applicationDisplayName": "VirtualMetric DataStream Microsoft Sentinel ASIM Push Connector"
                   }
                 }
               ]
@@ -8212,7 +8212,7 @@
       ],
       "properties": {
         "contentId": "[variables('_dataConnectorContentIdConnections2')]",
-        "displayName": "VirtualMetric DataStream - Sentinel ASIM (Push)",
+        "displayName": "VirtualMetric DataStream - Microsoft Sentinel ASIM (Push)",
         "contentKind": "ResourcesDataConnector",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
@@ -8234,7 +8234,7 @@
               }
             },
             "connectorDefinitionName": {
-              "defaultValue": "VirtualMetric DataStream - Sentinel ASIM (Push)",
+              "defaultValue": "VirtualMetric DataStream - Microsoft Sentinel ASIM (Push)",
               "type": "securestring",
               "minLength": 1
             },
@@ -8327,7 +8327,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamASIMAuditSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamASIMAuditSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject1').analyticRuleVersion1]",
@@ -8362,10 +8362,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -8419,7 +8419,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamASIMAuthenticationSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamASIMAuthenticationSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject2').analyticRuleVersion2]",
@@ -8454,10 +8454,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -8511,7 +8511,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamASIMDhcpSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamASIMDhcpSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject3').analyticRuleVersion3]",
@@ -8546,10 +8546,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -8603,7 +8603,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamASIMDnsSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamASIMDnsSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject4').analyticRuleVersion4]",
@@ -8638,10 +8638,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -8695,7 +8695,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamASIMFileSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamASIMFileSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject5').analyticRuleVersion5]",
@@ -8730,10 +8730,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -8787,7 +8787,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamASIMNetworkSessionSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamASIMNetworkSessionSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject6').analyticRuleVersion6]",
@@ -8822,10 +8822,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -8879,7 +8879,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamASIMProcessSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamASIMProcessSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject7').analyticRuleVersion7]",
@@ -8914,10 +8914,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -8971,7 +8971,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamASIMRegistrySchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamASIMRegistrySchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject8').analyticRuleVersion8]",
@@ -9006,10 +9006,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -9063,7 +9063,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamASIMUserManagementSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamASIMUserManagementSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject9').analyticRuleVersion9]",
@@ -9098,10 +9098,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -9155,7 +9155,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamASIMWebSessionSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamASIMWebSessionSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject10').analyticRuleVersion10]",
@@ -9190,10 +9190,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -9247,7 +9247,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamCommonSecurityLogSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamCommonSecurityLogSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject11').analyticRuleVersion11]",
@@ -9282,10 +9282,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -9339,7 +9339,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamEventSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamEventSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject12').analyticRuleVersion12]",
@@ -9374,10 +9374,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -9431,7 +9431,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamSecurityEventSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamSecurityEventSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject13').analyticRuleVersion13]",
@@ -9466,10 +9466,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -9523,7 +9523,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamSyslogSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamSyslogSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject14').analyticRuleVersion14]",
@@ -9558,10 +9558,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -9615,7 +9615,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamWindowsEventSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamWindowsEventSchemaDrift_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject15').analyticRuleVersion15]",
@@ -9650,10 +9650,10 @@
                   }
                 ],
                 "customDetails": {
-                  "Drifted": "Drifted",
                   "Total": "Total",
-                  "Stream": "Stream",
-                  "DriftPercentage": "DriftPercentage"
+                  "DriftPercentage": "DriftPercentage",
+                  "Drifted": "Drifted",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -9707,7 +9707,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamIngestionStopped_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamIngestionStopped_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject16').analyticRuleVersion16]",
@@ -9761,10 +9761,10 @@
                   }
                 ],
                 "customDetails": {
+                  "LastSeen": "LastSeen",
                   "SilenceMinutes": "SilenceMinutes",
-                  "Stream": "Stream",
                   "HistoricalCount": "HistoricalCount",
-                  "LastSeen": "LastSeen"
+                  "Stream": "Stream"
                 }
               }
             },
@@ -9818,7 +9818,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamVolumeSpike_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamVolumeSpike_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject17').analyticRuleVersion17]",
@@ -9872,10 +9872,10 @@
                   }
                 ],
                 "customDetails": {
+                  "BaselineAvg": "BaselineAvg",
                   "RecentCount": "RecentCount",
                   "SpikeRatio": "SpikeRatio",
-                  "Stream": "Stream",
-                  "BaselineAvg": "BaselineAvg"
+                  "Stream": "Stream"
                 }
               }
             },
@@ -9929,7 +9929,7 @@
         "[extensionResourceId(resourceId('Microsoft.OperationalInsights/workspaces', parameters('workspace')), 'Microsoft.SecurityInsights/contentPackages', variables('_solutionId'))]"
       ],
       "properties": {
-        "description": "VMDataStreamIngestionLatency_AnalyticalRules Analytics Rule with template version 3.1.0",
+        "description": "VMDataStreamIngestionLatency_AnalyticalRules Analytics Rule with template version 3.1.1",
         "mainTemplate": {
           "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
           "contentVersion": "[variables('analyticRuleObject18').analyticRuleVersion18]",
@@ -9985,8 +9985,8 @@
                 "customDetails": {
                   "P95LatencyMin": "P95LatencyMin",
                   "SampleCount": "SampleCount",
-                  "Stream": "Stream",
-                  "MaxLatencyMin": "MaxLatencyMin"
+                  "MaxLatencyMin": "MaxLatencyMin",
+                  "Stream": "Stream"
                 }
               }
             },
@@ -10036,7 +10036,7 @@
       "apiVersion": "2023-04-01-preview",
       "location": "[parameters('workspace-location')]",
       "properties": {
-        "version": "3.1.0",
+        "version": "3.1.1",
         "kind": "Solution",
         "contentSchemaVersion": "3.0.0",
         "displayName": "VirtualMetric DataStream CCF",

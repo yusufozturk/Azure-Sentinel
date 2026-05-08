@@ -7,7 +7,7 @@
     "properties": {
         "connectorUiConfig": {
             "id": "VM-Sentinel-Standard_CCF",
-            "title": "VirtualMetric DataStream - Sentinel Standard (Push)",
+            "title": "VirtualMetric DataStream - Microsoft Sentinel Standard (Push)",
             "publisher": "VirtualMetric",
             "descriptionMarkdown": "The [VirtualMetric DataStream](https://docs.virtualmetric.com/) Push connector Pushes CommonSecurityLog, SecurityEvent, Event, Syslog, and WindowsEvent telemetry. Authentication, the Data Collection Endpoint, the Data Collection Rule, and required role assignments are provisioned automatically when you click Deploy. After deployment the connection details below are populated and can be copied into your DataStream agent configuration.",
             "graphQueries": [
@@ -130,7 +130,7 @@
                             "type": "DeployPushConnectorButton",
                             "parameters": {
                                 "label": "Deploy connector resources",
-                                "applicationDisplayName": "VirtualMetric DataStream Sentinel-Standard Push Connector"
+                                "applicationDisplayName": "VirtualMetric DataStream Microsoft Sentinel Standard Push Connector"
                             }
                         }
                     ]

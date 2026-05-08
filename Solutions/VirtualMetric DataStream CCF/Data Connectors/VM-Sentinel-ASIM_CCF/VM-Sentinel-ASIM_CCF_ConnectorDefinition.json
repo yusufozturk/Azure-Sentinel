@@ -7,7 +7,7 @@
     "properties": {
         "connectorUiConfig": {
             "id": "VM-Sentinel-ASIM_CCF",
-            "title": "VirtualMetric DataStream - Sentinel ASIM (Push)",
+            "title": "VirtualMetric DataStream - Microsoft Sentinel ASIM (Push)",
             "publisher": "VirtualMetric",
             "descriptionMarkdown": "The [VirtualMetric DataStream](https://docs.virtualmetric.com/) Push connector Pushes the 10 ASIM-normalized telemetry streams (Audit, Authentication, Dhcp, Dns, File, NetworkSession, Process, Registry, UserManagement, WebSession). Authentication, the Data Collection Endpoint, the Data Collection Rule, and required role assignments are provisioned automatically when you click Deploy. After deployment the connection details below are populated and can be copied into your DataStream agent configuration.",
             "graphQueries": [
@@ -180,7 +180,7 @@
                             "type": "DeployPushConnectorButton",
                             "parameters": {
                                 "label": "Deploy connector resources",
-                                "applicationDisplayName": "VirtualMetric DataStream Sentinel-ASIM Push Connector"
+                                "applicationDisplayName": "VirtualMetric DataStream Microsoft Sentinel ASIM Push Connector"
                             }
                         }
                     ]
