@@ -1,28 +1,28 @@
 ﻿{
-    "name":  "VM-Sentinel-ASIM_CCF-Connector",
-    "apiVersion":  "2024-09-01",
-    "type":  "Microsoft.SecurityInsights/dataConnectors",
-    "location":  "{{location}}",
-    "kind":  "Push",
-    "properties":  {
-                       "connectorDefinitionName":  "VM-Sentinel-ASIM_CCF",
-                       "dcrConfig":  {
-                                         "streamName":  "Custom-ASimNetworkSessionLogs",
-                                         "dataCollectionEndpoint":  "{{dataCollectionEndpoint}}",
-                                         "dataCollectionRuleImmutableId":  "{{dataCollectionRuleImmutableId}}"
-                                     },
-                       "auth":  {
-                                    "type":  "Push",
-                                    "appId":  "{{appId}}",
-                                    "servicePrincipalId":  "{{servicePrincipalId}}"
-                                },
-                       "request":  {
-                                       "RetryCount":  1
-                                   },
-                       "response":  {
-                                        "eventsJsonPaths":  [
-                                                                "$"
-                                                            ]
-                                    }
-                   }
+    "name": "VM-Sentinel-ASIM_CCF-Connector",
+    "apiVersion": "2024-09-01",
+    "type": "Microsoft.SecurityInsights/dataConnectors",
+    "location": "{{location}}",
+    "kind": "Push",
+    "properties": {
+        "connectorDefinitionName": "VM-Sentinel-ASIM_CCF",
+        "dcrConfig": {
+            "streamName": "Custom-ASimNetworkSessionLogs",
+            "dataCollectionEndpoint": "{{dataCollectionEndpoint}}",
+            "dataCollectionRuleImmutableId": "{{dataCollectionRuleImmutableId}}"
+        },
+        "auth": {
+            "type": "Push",
+            "appId": "{{appId}}",
+            "servicePrincipalId": "{{servicePrincipalId}}"
+        },
+        "request": {
+            "RetryCount": 1
+        },
+        "response": {
+            "eventsJsonPaths": [
+                "$"
+            ]
+        }
+    }
 }

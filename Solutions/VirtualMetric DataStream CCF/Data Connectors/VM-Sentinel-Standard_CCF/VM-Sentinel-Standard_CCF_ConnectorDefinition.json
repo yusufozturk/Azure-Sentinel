@@ -1,209 +1,207 @@
 ﻿{
-    "name":  "VM-Sentinel-Standard_CCF",
-    "apiVersion":  "2022-09-01-preview",
-    "type":  "Microsoft.SecurityInsights/dataConnectorDefinitions",
-    "location":  "{{location}}",
-    "kind":  "Customizable",
-    "properties":  {
-                       "connectorUiConfig":  {
-                                                 "id":  "VM-Sentinel-Standard_CCF",
-                                                 "title":  "VirtualMetric DataStream - Sentinel Standard (Push)",
-                                                 "publisher":  "VirtualMetric",
-                                                 "descriptionMarkdown":  "The [VirtualMetric DataStream](https://docs.virtualmetric.com/) Push connector Pushes CommonSecurityLog, SecurityEvent, Event, Syslog, and WindowsEvent telemetry. Authentication, the Data Collection Endpoint, the Data Collection Rule, and required role assignments are provisioned automatically when you click Deploy. After deployment the connection details below are populated and can be copied into your DataStream agent configuration.",
-                                                 "graphQueries":  [
-                                                                      {
-                                                                          "metricName":  "Total CommonSecurityLog events received",
-                                                                          "legend":  "CommonSecurityLog",
-                                                                          "baseQuery":  "CommonSecurityLog | where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'"
-                                                                      },
-                                                                      {
-                                                                          "metricName":  "Total SecurityEvent events received",
-                                                                          "legend":  "SecurityEvent",
-                                                                          "baseQuery":  "SecurityEvent | where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'"
-                                                                      },
-                                                                      {
-                                                                          "metricName":  "Total Event events received",
-                                                                          "legend":  "Event",
-                                                                          "baseQuery":  "Event | where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'"
-                                                                      },
-                                                                      {
-                                                                          "metricName":  "Total Syslog events received",
-                                                                          "legend":  "Syslog",
-                                                                          "baseQuery":  "Syslog | where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'"
-                                                                      },
-                                                                      {
-                                                                          "metricName":  "Total WindowsEvent events received",
-                                                                          "legend":  "WindowsEvent",
-                                                                          "baseQuery":  "WindowsEvent | where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'"
-                                                                      }
-                                                                  ],
-                                                 "sampleQueries":  [
-                                                                       {
-                                                                           "description":  "Most recent VirtualMetric events in CommonSecurityLog (last 24h)",
-                                                                           "query":  "CommonSecurityLog\n| where TimeGenerated > ago(24h)\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'\n| take 100"
-                                                                       },
-                                                                       {
-                                                                           "description":  "Ingestion volume by table (last 7d)",
-                                                                           "query":  "(CommonSecurityLog\n| extend SourceTable = 'CommonSecurityLog'\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream')\n| union (SecurityEvent\n| extend SourceTable = 'SecurityEvent'\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream')\n| union (Event\n| extend SourceTable = 'Event'\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream')\n| union (Syslog\n| extend SourceTable = 'Syslog'\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream')\n| union (WindowsEvent\n| extend SourceTable = 'WindowsEvent'\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream')"
-                                                                       }
-                                                                   ],
-                                                 "dataTypes":  [
-                                                                   {
-                                                                       "name":  "CommonSecurityLog",
-                                                                       "lastDataReceivedQuery":  "CommonSecurityLog\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
-                                                                   },
-                                                                   {
-                                                                       "name":  "SecurityEvent",
-                                                                       "lastDataReceivedQuery":  "SecurityEvent\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
-                                                                   },
-                                                                   {
-                                                                       "name":  "Event",
-                                                                       "lastDataReceivedQuery":  "Event\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
-                                                                   },
-                                                                   {
-                                                                       "name":  "Syslog",
-                                                                       "lastDataReceivedQuery":  "Syslog\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
-                                                                   },
-                                                                   {
-                                                                       "name":  "WindowsEvent",
-                                                                       "lastDataReceivedQuery":  "WindowsEvent\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
-                                                                   }
-                                                               ],
-                                                 "connectivityCriteria":  [
-                                                                              {
-                                                                                  "type":  "IsConnectedQuery",
-                                                                                  "value":  [
-                                                                                                "CommonSecurityLog\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
-                                                                                                "SecurityEvent\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
-                                                                                                "Event\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
-                                                                                                "Syslog\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
-                                                                                                "WindowsEvent\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)"
-                                                                                            ]
-                                                                              }
-                                                                          ],
-                                                 "isConnectivityCriteriasMatchSome":  true,
-                                                 "availability":  {
-                                                                      "status":  1,
-                                                                      "isPreview":  true
-                                                                  },
-                                                 "permissions":  {
-                                                                     "resourceProvider":  [
-                                                                                              {
-                                                                                                  "provider":  "Microsoft.OperationalInsights/workspaces",
-                                                                                                  "permissionsDisplayText":  "read and write permissions are required.",
-                                                                                                  "providerDisplayName":  "Workspace",
-                                                                                                  "scope":  "Workspace",
-                                                                                                  "requiredPermissions":  {
-                                                                                                                              "write":  true,
-                                                                                                                              "read":  true,
-                                                                                                                              "delete":  true
-                                                                                                                          }
-                                                                                              }
-                                                                                          ],
-                                                                     "customs":  [
-                                                                                     {
-                                                                                         "name":  "Microsoft Entra",
-                                                                                         "description":  "Permission to create an app registration in Microsoft Entra ID. Typically requires Entra ID Application Developer role or higher."
-                                                                                     },
-                                                                                     {
-                                                                                         "name":  "Microsoft Azure",
-                                                                                         "description":  "Permission to assign the Monitoring Metrics Publisher role on the Data Collection Rule. Typically requires Azure RBAC Owner or User Access Administrator role."
-                                                                                     },
-                                                                                     {
-                                                                                         "name":  "VirtualMetric DataStream Agent",
-                                                                                         "description":  "A running [VirtualMetric DataStream](https://docs.virtualmetric.com/) agent is required to collect, normalize, and push events to the Microsoft Sentinel Logs Ingestion API."
-                                                                                     }
-                                                                                 ]
-                                                                 },
-                                                 "instructionSteps":  [
-                                                                          {
-                                                                              "title":  "1. Deploy connector resources",
-                                                                              "description":  "This connector enables the VirtualMetric DataStream agent to push events directly to Microsoft Sentinel via the Azure Monitor Logs Ingestion API. No manual app registration or DCR setup is required.",
-                                                                              "instructions":  [
-                                                                                                   {
-                                                                                                       "type":  "Markdown",
-                                                                                                       "parameters":  {
-                                                                                                                          "content":  "Clicking **Deploy** will create:\n- A Data Collection Rule (DCR) with 5 stream(s) routing to the built-in Microsoft Sentinel tables (CommonSecurityLog, SecurityEvent, Event, Syslog, WindowsEvent)\n- A Data Collection Endpoint (DCE)\n- A Microsoft Entra application with OAuth client credentials\n- The Monitoring Metrics Publisher role assignment for that application on the DCR\n\nNo custom tables are created — events land in the built-in tables, so existing analytics rules, workbooks, and parsers continue to work unchanged."
-                                                                                                                      }
-                                                                                                   },
-                                                                                                   {
-                                                                                                       "type":  "DeployPushConnectorButton",
-                                                                                                       "parameters":  {
-                                                                                                                          "label":  "Deploy connector resources",
-                                                                                                                          "applicationDisplayName":  "VirtualMetric DataStream Sentinel-Standard Push Connector"
-                                                                                                                      }
-                                                                                                   }
-                                                                                               ]
-                                                                          },
-                                                                          {
-                                                                              "title":  "2. Configure the VirtualMetric DataStream agent",
-                                                                              "description":  "After the deployment completes, copy the values below into your VirtualMetric DataStream agent configuration. The DataStream agent uses these to authenticate with Microsoft Entra and push events to the Data Collection Endpoint.",
-                                                                              "instructions":  [
-                                                                                                   {
-                                                                                                       "type":  "CopyableLabel",
-                                                                                                       "parameters":  {
-                                                                                                                          "label":  "Tenant ID (Directory ID)",
-                                                                                                                          "fillWith":  [
-                                                                                                                                           "TenantId"
-                                                                                                                                       ]
-                                                                                                                      }
-                                                                                                   },
-                                                                                                   {
-                                                                                                       "type":  "CopyableLabel",
-                                                                                                       "parameters":  {
-                                                                                                                          "label":  "Application (Client) ID",
-                                                                                                                          "fillWith":  [
-                                                                                                                                           "ApplicationId"
-                                                                                                                                       ],
-                                                                                                                          "placeholder":  "Deploy connector resources to populate this value"
-                                                                                                                      }
-                                                                                                   },
-                                                                                                   {
-                                                                                                       "type":  "CopyableLabel",
-                                                                                                       "parameters":  {
-                                                                                                                          "label":  "Client Secret (only shown once)",
-                                                                                                                          "fillWith":  [
-                                                                                                                                           "ApplicationSecret"
-                                                                                                                                       ],
-                                                                                                                          "placeholder":  "Deploy connector resources to populate this value"
-                                                                                                                      }
-                                                                                                   },
-                                                                                                   {
-                                                                                                       "type":  "CopyableLabel",
-                                                                                                       "parameters":  {
-                                                                                                                          "label":  "Data Collection Endpoint Logs Ingestion URI",
-                                                                                                                          "fillWith":  [
-                                                                                                                                           "DataCollectionEndpoint"
-                                                                                                                                       ],
-                                                                                                                          "placeholder":  "Deploy connector resources to populate this value"
-                                                                                                                      }
-                                                                                                   },
-                                                                                                   {
-                                                                                                       "type":  "CopyableLabel",
-                                                                                                       "parameters":  {
-                                                                                                                          "label":  "Data Collection Rule Immutable ID",
-                                                                                                                          "fillWith":  [
-                                                                                                                                           "DataCollectionRuleId"
-                                                                                                                                       ],
-                                                                                                                          "placeholder":  "Deploy connector resources to populate this value"
-                                                                                                                      }
-                                                                                                   },
-                                                                                                   {
-                                                                                                       "type":  "Markdown",
-                                                                                                       "parameters":  {
-                                                                                                                          "content":  "Configure these stream names in the VirtualMetric DataStream agent so each event type is routed to the matching table:\n\n- `Custom-CommonSecurityLog`\n- `Custom-SecurityEvent`\n- `Custom-Event`\n- `Custom-Syslog`\n- `Custom-WindowsEvent`"
-                                                                                                                      }
-                                                                                                   }
-                                                                                               ]
-                                                                          },
-                                                                          {
-                                                                              "title":  "3. Verify ingestion",
-                                                                              "description":  "After enabling the integration in the VirtualMetric DataStream agent, allow 5-10 minutes for the first events to appear, then run the sample queries above. If no data appears, verify the DataStream agent has reachability to the Data Collection Endpoint and that the Entra application credentials match.",
-                                                                              "instructions":  [
-
-                                                                                               ]
-                                                                          }
-                                                                      ]
-                                             }
-                   }
+    "name": "VM-Sentinel-Standard_CCF",
+    "apiVersion": "2022-09-01-preview",
+    "type": "Microsoft.SecurityInsights/dataConnectorDefinitions",
+    "location": "{{location}}",
+    "kind": "Customizable",
+    "properties": {
+        "connectorUiConfig": {
+            "id": "VM-Sentinel-Standard_CCF",
+            "title": "VirtualMetric DataStream - Sentinel Standard (Push)",
+            "publisher": "VirtualMetric",
+            "descriptionMarkdown": "The [VirtualMetric DataStream](https://docs.virtualmetric.com/) Push connector Pushes CommonSecurityLog, SecurityEvent, Event, Syslog, and WindowsEvent telemetry. Authentication, the Data Collection Endpoint, the Data Collection Rule, and required role assignments are provisioned automatically when you click Deploy. After deployment the connection details below are populated and can be copied into your DataStream agent configuration.",
+            "graphQueries": [
+                {
+                    "metricName": "Total CommonSecurityLog events received",
+                    "legend": "CommonSecurityLog",
+                    "baseQuery": "CommonSecurityLog | where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'"
+                },
+                {
+                    "metricName": "Total SecurityEvent events received",
+                    "legend": "SecurityEvent",
+                    "baseQuery": "SecurityEvent | where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'"
+                },
+                {
+                    "metricName": "Total Event events received",
+                    "legend": "Event",
+                    "baseQuery": "Event | where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'"
+                },
+                {
+                    "metricName": "Total Syslog events received",
+                    "legend": "Syslog",
+                    "baseQuery": "Syslog | where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'"
+                },
+                {
+                    "metricName": "Total WindowsEvent events received",
+                    "legend": "WindowsEvent",
+                    "baseQuery": "WindowsEvent | where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'"
+                }
+            ],
+            "sampleQueries": [
+                {
+                    "description": "Most recent VirtualMetric events in CommonSecurityLog (last 24h)",
+                    "query": "CommonSecurityLog\n| where TimeGenerated > ago(24h)\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'\n| take 100"
+                },
+                {
+                    "description": "Ingestion volume by table (last 7d)",
+                    "query": "(CommonSecurityLog\n| extend SourceTable = 'CommonSecurityLog'\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream')\n| union (SecurityEvent\n| extend SourceTable = 'SecurityEvent'\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream')\n| union (Event\n| extend SourceTable = 'Event'\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream')\n| union (Syslog\n| extend SourceTable = 'Syslog'\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream')\n| union (WindowsEvent\n| extend SourceTable = 'WindowsEvent'\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream')"
+                }
+            ],
+            "dataTypes": [
+                {
+                    "name": "CommonSecurityLog",
+                    "lastDataReceivedQuery": "CommonSecurityLog\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                },
+                {
+                    "name": "SecurityEvent",
+                    "lastDataReceivedQuery": "SecurityEvent\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                },
+                {
+                    "name": "Event",
+                    "lastDataReceivedQuery": "Event\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                },
+                {
+                    "name": "Syslog",
+                    "lastDataReceivedQuery": "Syslog\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                },
+                {
+                    "name": "WindowsEvent",
+                    "lastDataReceivedQuery": "WindowsEvent\n| summarize Time = max(TimeGenerated)\n| where isnotempty(Time)"
+                }
+            ],
+            "connectivityCriteria": [
+                {
+                    "type": "IsConnectedQuery",
+                    "value": [
+                        "CommonSecurityLog\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
+                        "SecurityEvent\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
+                        "Event\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
+                        "Syslog\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)",
+                        "WindowsEvent\n| where DeviceVendor == 'VirtualMetric' or DeviceProduct has 'DataStream'\n| summarize LastLogReceived = max(TimeGenerated)\n| project IsConnected = LastLogReceived > ago(7d)"
+                    ]
+                }
+            ],
+            "isConnectivityCriteriasMatchSome": true,
+            "availability": {
+                "status": 1,
+                "isPreview": true
+            },
+            "permissions": {
+                "resourceProvider": [
+                    {
+                        "provider": "Microsoft.OperationalInsights/workspaces",
+                        "permissionsDisplayText": "read and write permissions are required.",
+                        "providerDisplayName": "Workspace",
+                        "scope": "Workspace",
+                        "requiredPermissions": {
+                            "write": true,
+                            "read": true,
+                            "delete": true
+                        }
+                    }
+                ],
+                "customs": [
+                    {
+                        "name": "Microsoft Entra",
+                        "description": "Permission to create an app registration in Microsoft Entra ID. Typically requires Entra ID Application Developer role or higher."
+                    },
+                    {
+                        "name": "Microsoft Azure",
+                        "description": "Permission to assign the Monitoring Metrics Publisher role on the Data Collection Rule. Typically requires Azure RBAC Owner or User Access Administrator role."
+                    },
+                    {
+                        "name": "VirtualMetric DataStream Agent",
+                        "description": "A running [VirtualMetric DataStream](https://docs.virtualmetric.com/) agent is required to collect, normalize, and push events to the Microsoft Sentinel Logs Ingestion API."
+                    }
+                ]
+            },
+            "instructionSteps": [
+                {
+                    "title": "1. Deploy connector resources",
+                    "description": "This connector enables the VirtualMetric DataStream agent to push events directly to Microsoft Sentinel via the Azure Monitor Logs Ingestion API. No manual app registration or DCR setup is required.",
+                    "instructions": [
+                        {
+                            "type": "Markdown",
+                            "parameters": {
+                                "content": "Clicking **Deploy** will create:\n- A Data Collection Rule (DCR) with 5 stream(s) routing to the built-in Microsoft Sentinel tables (CommonSecurityLog, SecurityEvent, Event, Syslog, WindowsEvent)\n- A Data Collection Endpoint (DCE)\n- A Microsoft Entra application with OAuth client credentials\n- The Monitoring Metrics Publisher role assignment for that application on the DCR\n\nNo custom tables are created — events land in the built-in tables, so existing analytics rules, workbooks, and parsers continue to work unchanged."
+                            }
+                        },
+                        {
+                            "type": "DeployPushConnectorButton",
+                            "parameters": {
+                                "label": "Deploy connector resources",
+                                "applicationDisplayName": "VirtualMetric DataStream Sentinel-Standard Push Connector"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "2. Configure the VirtualMetric DataStream agent",
+                    "description": "After the deployment completes, copy the values below into your VirtualMetric DataStream agent configuration. The DataStream agent uses these to authenticate with Microsoft Entra and push events to the Data Collection Endpoint.",
+                    "instructions": [
+                        {
+                            "type": "CopyableLabel",
+                            "parameters": {
+                                "label": "Tenant ID (Directory ID)",
+                                "fillWith": [
+                                    "TenantId"
+                                ]
+                            }
+                        },
+                        {
+                            "type": "CopyableLabel",
+                            "parameters": {
+                                "label": "Application (Client) ID",
+                                "fillWith": [
+                                    "ApplicationId"
+                                ],
+                                "placeholder": "Deploy connector resources to populate this value"
+                            }
+                        },
+                        {
+                            "type": "CopyableLabel",
+                            "parameters": {
+                                "label": "Client Secret (only shown once)",
+                                "fillWith": [
+                                    "ApplicationSecret"
+                                ],
+                                "placeholder": "Deploy connector resources to populate this value"
+                            }
+                        },
+                        {
+                            "type": "CopyableLabel",
+                            "parameters": {
+                                "label": "Data Collection Endpoint Logs Ingestion URI",
+                                "fillWith": [
+                                    "DataCollectionEndpoint"
+                                ],
+                                "placeholder": "Deploy connector resources to populate this value"
+                            }
+                        },
+                        {
+                            "type": "CopyableLabel",
+                            "parameters": {
+                                "label": "Data Collection Rule Immutable ID",
+                                "fillWith": [
+                                    "DataCollectionRuleId"
+                                ],
+                                "placeholder": "Deploy connector resources to populate this value"
+                            }
+                        },
+                        {
+                            "type": "Markdown",
+                            "parameters": {
+                                "content": "Configure these stream names in the VirtualMetric DataStream agent so each event type is routed to the matching table:\n\n- `Custom-CommonSecurityLog`\n- `Custom-SecurityEvent`\n- `Custom-Event`\n- `Custom-Syslog`\n- `Custom-WindowsEvent`"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "title": "3. Verify ingestion",
+                    "description": "After enabling the integration in the VirtualMetric DataStream agent, allow 5-10 minutes for the first events to appear, then run the sample queries above. If no data appears, verify the DataStream agent has reachability to the Data Collection Endpoint and that the Entra application credentials match.",
+                    "instructions": []
+                }
+            ]
+        }
+    }
 }
